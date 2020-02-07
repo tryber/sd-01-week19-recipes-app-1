@@ -1,0 +1,25 @@
+.login-title {
+  font-size: 10mm;
+}
+
+.input-email {
+  margin: 15px;
+  border: solid 1px black;
+}
+
+.input-password {
+  border: solid 1px black;
+}
+
+.form, .page-login {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.access-button {
+  justify-content: center;
+  margin-top: 15px;
+  background: #86d660;
+}
+
