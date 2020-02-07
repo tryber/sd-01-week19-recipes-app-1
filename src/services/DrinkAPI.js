@@ -1,4 +1,4 @@
-const linkCocktailAPI = 'https://thecocktaildb.com/api/json/v1/1/'
+const linkCocktailAPI = 'https://thecocktaildb.com/api/json/v1/1/';
 const CocktailAPI = (value) => (
   fetch(`${linkCocktailAPI}${value}`)
     .then((response) => response.json()

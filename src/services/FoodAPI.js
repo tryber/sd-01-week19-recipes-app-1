@@ -1,4 +1,4 @@
-const linkMeatAPI = 'https://www.themealdb.com/api/json/v1/1/'
+const linkMeatAPI = 'https://www.themealdb.com/api/json/v1/1/';
 const MeatAPI = (value) => (
   fetch(`${linkMeatAPI}${value}`)
     .then((response) => response.json()
