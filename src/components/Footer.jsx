@@ -4,17 +4,16 @@ import explorerIcon from '../img/explorerIcon.svg';
 import foodIcon from '../img/foodIcon.svg';
 import './Footer.css';
 
+const allIcon = [drinkIcon, explorerIcon, foodIcon]
+
 const Footer = () => (
   <div className="Footer_father">
-    <div>
-      <img alt={'drink-icon'} src={drinkIcon} />
-    </div>
-    <div>
-      <img alt={'explorer-icon'} src={explorerIcon} />
-    </div>
-    <div>
-      <img alt={'food-icon'} src={foodIcon} />
-    </div>
+    {allIcon.map((icon) => (
+      <img
+        className={'Footer_icon'}
+        alt={'footer icon'}
+        src={icon}
+      />))}
   </div>
 )
 
