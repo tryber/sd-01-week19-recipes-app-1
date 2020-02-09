@@ -1,7 +1,24 @@
 import React from 'react';
+import meatAPI from '../services/foodAPI';
+import cocktailAPI from '../services/drinkAPI';
 
-const input = (searchValue) => {
+const isURL = (inputValue) => {
   if (/meals/.test(window.location.href)) {
-    return <div><input></input></div>;
+    return meatAPI(inputValue);
+  } else if (/cocktails/.test(window.location.href)) {
+    return cocktailAPI(inputValue);
+  } else {
+    return;
   }
 }
+
+const inputHeader = (wordToAPIRequest) => (
+  <div>
+    <input
+      placeholder="Buscar receita"
+      onChange={(e) => isURL(e.target.value)}
+    />
+  </div>
+);
+
+export default inputHeader;
