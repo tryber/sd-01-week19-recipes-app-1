@@ -12,7 +12,7 @@ const isURL = (inputValue) => {
   }
 }
 
-const inputHeader = (wordToAPIRequest) => (
+const inputHeader = () => (
   <div>
     <input
       placeholder="Buscar receita"
