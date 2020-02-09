@@ -7,10 +7,9 @@ const isURL = (inputValue) => {
     return meatAPI(inputValue);
   } else if (/cocktails/.test(window.location.href)) {
     return cocktailAPI(inputValue);
-  } else {
-    return;
   }
-}
+  return;
+};
 
 const inputHeader = () => (
   <div>
