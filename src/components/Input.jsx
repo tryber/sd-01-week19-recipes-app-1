@@ -8,7 +8,7 @@ const isURL = (inputValue) => {
   } else if (/cocktails/.test(window.location.href)) {
     return cocktailAPI(inputValue);
   }
-  return;
+  return '';
 };
 
 const inputHeader = () => (
