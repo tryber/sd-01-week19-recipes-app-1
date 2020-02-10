@@ -1,18 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import context from '../context/context';
 
 const LoginForms = () => {
-  const [userEmail, setUserEmail] = useState('');
-  const [userPassword, setUserPassword] = useState('');
-  const [disabled, setDisabled] = useState(false);
-
-  buttonStartApp = () => {
-    if (userPassword.length >= 6 && userEmail !== '') {
-      setDisabled(!disabled);
-    }
-  }
+  const { setUserEmail, setUserPassword } = useContext(context);
 
   return (
-    <div>
+    <div className="form">
       <input 
         type="email" 
         placeholder="Email" 

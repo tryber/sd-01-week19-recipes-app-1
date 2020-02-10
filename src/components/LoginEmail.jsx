@@ -1,9 +1,0 @@
-import React from 'react';
-
-const LoginEmail = () => (
-  <div>
-    <input type="email" placeholder="Email" className="input-email" />
-  </div>
-);
-
-export default LoginEmail;

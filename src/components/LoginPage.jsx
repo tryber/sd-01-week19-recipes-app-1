@@ -1,6 +1,6 @@
 import React from 'react';
-import LoginSenha from './LoginPassword';
-import LoginEmail from './LoginEmail';
+
+import LoginForms from './LoginForms';
 import LoginButton from './LoginButton';
 import '../styles/LoginPage.css';
 
@@ -8,8 +8,7 @@ const LoginPage = () => (
   <div className="page-login">
     <p className="login-title">Login</p>
     <form className="form">
-      <LoginEmail />
-      <LoginSenha />
+      <LoginForms />
       <LoginButton />
     </form>
   </div>
