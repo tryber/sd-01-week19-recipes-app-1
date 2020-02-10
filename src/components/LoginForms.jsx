@@ -11,6 +11,7 @@ const LoginForms = () => {
         placeholder="Email"
         className="input-email"
         onChange={(event) => setUserEmail(event.target.value)}
+        data-testid="email-input"
       />
       <input
         type="password"
@@ -18,6 +19,7 @@ const LoginForms = () => {
         minLength="6"
         className="input-password"
         onChange={(event) => setUserPassword(event.target.value)}
+        data-testid="password-input"
       />
     </div>
   );

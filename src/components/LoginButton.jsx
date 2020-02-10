@@ -16,6 +16,7 @@ const LoginButton = () => {
       className="access-button"
       onClick={submition}
       disabled={disabled}
+      data-testid="login-submit-btn"
     >
       Entrar
     </button>
