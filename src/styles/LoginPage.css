@@ -6,15 +6,15 @@
   width: 70px;
 }
 
-.form ,.page-login {
+.form , .page-login {
   align-items: center;
   display: flex;
   flex-direction: column;
 }
 
 .input-email {
-  margin: 15px;
   border: solid 1px black;
+  margin: 15px;
 }
 
 .input-password {

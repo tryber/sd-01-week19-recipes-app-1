@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import context from './context';
 
@@ -22,11 +23,15 @@ const Provider = ({ children }) => {
     setUserPassword,
     disabled,
     setDisabled,
-  }
+  };
 
   return (
     <context.Provider value={storeContext}>{children}</context.Provider>
   );
-}
+};
 
 export default Provider;
+
+Provider.propTypes = {
+  children: PropTypes.node.isRequired,
+}
