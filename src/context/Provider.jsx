@@ -5,14 +5,14 @@ import context from './context';
 
 const Provider = ({ children }) => {
   const [disabled, setDisabled] = useState(true);
-  const [initialResult, setInitialResult] = useState();
+  const [result, setResult] = useState();
   const [mealsCategory, setMealsCategory] = useState();
 
   const storeContext = {
     disabled,
     setDisabled,
-    initialResult,
-    setInitialResult,
+    result,
+    setResult,
     mealsCategory,
     setMealsCategory,
   };

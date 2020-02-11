@@ -1,23 +1,29 @@
 import React, { useContext, useEffect } from 'react';
+import Categories from './Categories';
+// import MealsList from './MealsList';
 import context from '../context/context';
 import { mealAPI } from '../services/foodAPI';
 import generateRandomLetter from '../services/randomLetter';
 function MealPage() {
   const {
-    initialResult,
-    setInitialResult,
+    result,
+    setResult,
     setMealsCategory,
     mealsCategory,
   } = useContext(context);
 
   useEffect(() => {
-    mealAPI(`search.php?s=${generateRandomLetter()}`, setInitialResult);
+    mealAPI(`search.php?s=${generateRandomLetter()}`, setResult);
     mealAPI('list.php?c=list', setMealsCategory);
   }, []);
 
-  if (initialResult && mealsCategory) {
-    console.log(mealsCategory.meals.splice(0, 5));
-    return <div>iausdiuh</div>;
+  if (result && mealsCategory) {
+    console.log(result);
+    return (
+      <div>
+        <Categories />
+      </div>
+    );
   }
   return <div>Loading...</div>;
 }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import context from '../context/context';
 
 const LoginButton = () => {
-  const { disabled, userEmail, setInitialResult } = useContext(context);
+  const { disabled, userEmail } = useContext(context);
 
   const submition = () => {
     localStorage.setItem('meals-token', '1');
