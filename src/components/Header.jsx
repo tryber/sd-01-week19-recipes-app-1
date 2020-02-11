@@ -8,7 +8,7 @@ import '../styles/Header.css';
 
 function Header() {
   return (
-    <div className="separating-the-icons">
+    <div className="Header_separating-icons">
       <Link to="/profile"><img src={IconProfile} alt="Icon Profiler" /></Link>
       <h1>Header</h1>
       <img src={IconSearch} alt="Icon to Search" />
