@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import context from '../context/context';
 
 const LoginButton = () => {
-  const { disabled, userEmail } = useContext(context);
+  const { disabled, userEmail, setInitialResult } = useContext(context);
 
   const submition = () => {
     localStorage.setItem('meals-token', '1');
@@ -11,15 +12,17 @@ const LoginButton = () => {
   };
 
   return (
-    <button
-      type="button"
-      className="access-button"
-      onClick={submition}
-      disabled={disabled}
-      data-testid="login-submit-btn"
-    >
-      Entrar
-    </button>
+    <Link to ='/comidas'>
+      <button
+        type="button"
+        className="access-button"
+        onClick={submition}
+        disabled={disabled}
+        data-testid="login-submit-btn"
+      >
+        Entrar
+      </button>
+    </Link>
   );
 };
 
