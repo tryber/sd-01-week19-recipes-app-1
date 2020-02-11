@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ProfileLogout from './ProfileLogout';
 
-import '../styles/ProfilePage.css'
+import '../styles/ProfilePage.css';
 
 
 const ProfilePage = () => {
