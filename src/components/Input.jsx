@@ -1,24 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import context from '../context/context';
 import { DebounceInput } from 'react-debounce-input';
-import meatAPI from '../services/foodAPI';
-import cocktailAPI from '../services/drinkAPI';
 
-const validateURL = window.location.href;
-
-const []
-
-const isURL = (inputValue) => {
-
+const inputHeader = () => {
+  const { setSearchInput } = useContext(context)
+  return (
+    <div>
+      <DebounceInput
+        debounceTimeout={600}
+        placeholder="Buscar receita"
+        onChange={(e) => setSearchInput(e.target.value)}
+      />
+    </div>
+  )
 };
-
-const inputHeader = () => (
-  <div>
-    <DebounceInput
-
-      placeholder="Buscar receita"
-      onChange={(e) => isURL(e.target.value)}
-    />
-  </div>
-);
 
 export default inputHeader;
