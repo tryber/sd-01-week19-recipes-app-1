@@ -1,16 +1,15 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route} from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import './App.css';
 import LoginPage from './components/LoginPage';
 import ProfilePage from './components/ProfilePage';
 
-
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={LoginPage}/>
+        <Route exact path="/" component={LoginPage} />
         <Route exact path="/comidas" />
         <Route exact path="/bebidas" />
         <Route path="/receitas-feitas" />
