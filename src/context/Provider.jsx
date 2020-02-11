@@ -9,7 +9,8 @@ const Provider = ({ children }) => {
   const [disabled, setDisabled] = useState(true);
 
   useEffect(() => {
-    if (userPassword.length >= 6 && userEmail !== '') {
+    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    if (userPassword.length >= 6 && emailRegex.test(userEmail)) {
       setDisabled(false);
     } else {
       setDisabled(true);
