@@ -12,7 +12,7 @@ const inputHeader = () => {
         onChange={(e) => setSearchInput(e.target.value)}
       />
     </div>
-  )
+  );
 };
 
 export default inputHeader;
