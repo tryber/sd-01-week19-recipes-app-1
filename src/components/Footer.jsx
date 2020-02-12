@@ -11,6 +11,7 @@ const Footer = () => (
     <Link to="/bebidas">
       <img
         className={'Footer_icon'}
+        data-testid="drinks-bottom-btn"
         alt={'drinks icon'}
         src={drinkIcon}
       />
@@ -18,6 +19,7 @@ const Footer = () => (
     <Link to="/explorar">
       <img
         className={'Footer_icon'}
+        data-testid="explore-bottom-btn"
         alt={'explore icon'}
         src={explorerIcon}
       />
@@ -25,6 +27,7 @@ const Footer = () => (
     <Link to="/comidas">
       <img
         className={'Footer_icon'}
+        data-testid="food-bottom-btn"
         alt={'meals icon'}
         src={foodIcon}
       />
