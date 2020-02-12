@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import context from '../context/context';
 import { mealAPI, drinkAPI } from '../services/foodAPI';
 import generateRandomLetter from '../services/randomLetter';
@@ -56,5 +57,9 @@ function Categories({ pathname }) {
     <div>{generateCategories(foodCategory.drinks.slice(0, 5), setResult, drinkAPI)}</div>
   );
 }
+
+Categories.propTypes = {
+  pathname: PropTypes.string.isRequired,
+};
 
 export default Categories;

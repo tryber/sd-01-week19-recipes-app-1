@@ -12,7 +12,7 @@ const LoginButton = () => {
   };
 
   return (
-    <Link to ='/receitas/comidas'>
+    <Link to="/receitas/comidas">
       <button
         type="button"
         className="access-button"

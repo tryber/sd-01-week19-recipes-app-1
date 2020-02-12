@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './Food.css';
 
@@ -33,5 +34,15 @@ function Food({ data, pathname, index }) {
     </Link>
   );
 }
+
+Categories.propTypes = {
+  pathname: PropTypes.string.isRequired,
+  index: PropTypes.string.isRequired,
+  data: PropTypes.shape({
+    idMeal: PropTypes.string.isRequired,
+    strCategory: PropTypes.string.isRequired,
+    strDrink: PropTypes.string.isRequired,
+  }),
+};
 
 export default Food;
