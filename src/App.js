@@ -1,8 +1,9 @@
 import React from 'react';
+import InputHeader from './components/Input';
 
 function App() {
   return (
-    <div>Trybe</div>
+    <InputHeader />
   );
 }
 
