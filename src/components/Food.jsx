@@ -8,7 +8,7 @@ function Food({ data, pathname, index }) {
     return (
       <Link to={`/receitas/comidas/${data.idMeal}`} className="food-container">
         <div>
-          <img data-testid={`${index}-card-img`} src={data.strMealThumb} />
+          <img data-testid={`${index}-card-img`} src={data.strMealThumb} alt="img" />
           <p data-testid={`${index}-card-category`} className="food-category">
             {data.strCategory}
           </p>
@@ -23,7 +23,7 @@ function Food({ data, pathname, index }) {
   return (
     <Link to={`/receitas/bebidas/${data.idDrink}`} className="food-container">
       <div>
-        <img data-testid={`${index}-card-img`} src={data.strDrinkThumb} />
+        <img data-testid={`${index}-card-img`} src={data.strDrinkThumb} alt="img" />
         <p data-testid={`${index}-card-category`} className="food-category">
           {data.strCategory}
         </p>

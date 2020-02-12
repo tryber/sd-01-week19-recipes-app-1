@@ -16,13 +16,11 @@ const Provider = ({ children }) => {
     setResult,
     foodCategory,
     setFoodCategory,
-    currentFood, 
+    currentFood,
     setCurrentFood,
   };
 
-  return (
-    <context.Provider value={storeContext}>{children}</context.Provider>
-  );
+  return <context.Provider value={storeContext}>{children}</context.Provider>;
 };
 
 export default Provider;

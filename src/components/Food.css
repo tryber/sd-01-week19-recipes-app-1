@@ -1,7 +1,7 @@
 .food-container {
-  background: #FFFFFF;
+  background: white;
   border-radius: 6px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   color: black;
   height: 182px;
   margin-bottom: 1em;
@@ -20,12 +20,10 @@ img {
 
 .food-category {
   align-items: flex-end;
-  color: #A9A9A9;
+  color: darkgray;
   display: flex;
-  font-family: Roboto;
   font-size: 15px;
   font-style: normal;
-  font-weight: normal;
   height: 10px;
   left: 191px;
   line-height: 18px;
@@ -35,12 +33,10 @@ img {
 
 .food-name {
   align-items: flex-end;
-  color: #000000;
+  color: black;
   display: flex;
-  font-family: Roboto;
   font-size: 18px;
   font-style: normal;
-  font-weight: normal;
   height: 21px;
   left: 16px;
   line-height: 21px;

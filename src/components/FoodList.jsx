@@ -1,18 +1,17 @@
 import React from 'react';
 import Food from './Food';
+import PropTypes from 'prop-types';
 import './Food.css';
 
 function generateFoodsList(result, pathname) {
-  return result.map((food, index) => {
-    return (
-      <Food
-        index={index}
-        pathname={pathname}
-        key={`${food.idfood}1`}
-        data={food}
-      />
-    );
-  });
+  return result.map((food, index) => (
+    <Food
+      index={index}
+      pathname={pathname}
+      key={`${food.idfood}1`}
+      data={food}
+    />
+  ));
 }
 
 function FoodList({ result, pathname }) {
@@ -30,4 +29,10 @@ function FoodList({ result, pathname }) {
   );
 }
 
+FoodList.propTypes = {
+  pathname: PropTypes.string.isRequired,
+  result: PropTypes.shape({
+    meals: PropTypes.string.isRequired,
+  }).isRequired,
+};
 export default FoodList;
