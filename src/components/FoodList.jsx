@@ -1,6 +1,6 @@
 import React from 'react';
-import Food from './Food';
 import PropTypes from 'prop-types';
+import Food from './Food';
 import './Food.css';
 
 function generateFoodsList(result, pathname) {
