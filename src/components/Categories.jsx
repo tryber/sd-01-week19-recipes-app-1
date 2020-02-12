@@ -1,21 +1,21 @@
 import React, { useContext } from 'react';
 import context from '../context/context';
-import { mealAPI } from '../services/foodAPI';
+import { mealAPI, drinkAPI } from '../services/foodAPI';
 import generateRandomLetter from '../services/randomLetter';
 import './Categories.css';
 
-function updateAPI(category, setResult) {
-  mealAPI(`filter.php?c=${category}`, setResult);  
+function updateAPI(category, setResult, api) {
+  api(`filter.php?c=${category}`, setResult);
 }
 
-function buttonAll(setResult) {
+function buttonAll(setResult, api) {
   return (
     <button
       className="category-button"
       data-testid="all-category-filter"
       type="button"
       onClick={() =>
-        mealAPI(`search.php?s=${generateRandomLetter()}`, setResult, true)
+        api(`search.php?s=${generateRandomLetter()}`, setResult, true)
       }
     >
       All
@@ -23,10 +23,10 @@ function buttonAll(setResult) {
   );
 }
 
-function generateCategories(categories, setResult) {
+function generateCategories(categories, setResult, api) {
   return (
     <div className="category-container">
-      {buttonAll(setResult)}
+      {buttonAll(setResult, api)}
       {categories.map((category) => {
         const { strCategory } = category;
         return (
@@ -35,7 +35,7 @@ function generateCategories(categories, setResult) {
             key={strCategory}
             data-testid={`${strCategory}-category-filter`}
             type="button"
-            onClick={() => updateAPI(strCategory, setResult)}
+            onClick={() => updateAPI(strCategory, setResult, api)}
           >
             {strCategory}
           </button>
@@ -45,10 +45,15 @@ function generateCategories(categories, setResult) {
   );
 }
 
-function Categories() {
-  const { mealsCategory, setResult, result } = useContext(context);
+function Categories({ pathname }) {
+  const { foodCategory, setResult } = useContext(context);
+  if (pathname === '/receitas/comidas') {
+    return (
+      <div>{generateCategories(foodCategory.meals.slice(0, 5), setResult, mealAPI)}</div>
+    );
+  }
   return (
-    <div>{generateCategories(mealsCategory.meals.slice(0, 5), setResult,)}</div>
+    <div>{generateCategories(foodCategory.drinks.slice(0, 5), setResult, drinkAPI)}</div>
   );
 }
 
