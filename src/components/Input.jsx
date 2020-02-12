@@ -9,6 +9,7 @@ const InputHeader = () => {
   return (
     <div className="Header_input">
       <DebounceInput
+        data-testid="search-input"
         debounceTimeout={600}
         placeholder="Buscar receita"
         onChange={(e) => setSearchInput(e.target.value)}
@@ -16,20 +17,23 @@ const InputHeader = () => {
       <div>
         <label> Ingrediente
           <input
-          type="radio"
-          name="Radio_input-search"
+            data-testid="ingredient-search-radio"
+            type="radio"
+            name="Radio_input-search"
           />
         </label>
         <label> Nome
           <input
-          type="radio"
-          name="Radio_input-search"
+            data-testid="name-search-radio"
+            type="radio"
+            name="Radio_input-search"
           />
         </label>
         <label> Primeira Letra
           <input
-          type="radio"
-          name="Radio_input-search"
+            data-testid="first-letter-search-radio"
+            type="radio"
+            name="Radio_input-search"
           />
         </label>
       </div>
