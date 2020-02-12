@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { DebounceInput } from 'react-debounce-input';
 import context from '../context/context';
-import '../styles/InputSearch.css';
+import '../styles/inputSearch.css';
 
 const InputSearch = () => {
   const { setSearchInput } = useContext(context);
