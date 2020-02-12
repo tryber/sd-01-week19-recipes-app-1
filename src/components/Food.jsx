@@ -42,7 +42,7 @@ Categories.propTypes = {
     idMeal: PropTypes.string.isRequired,
     strCategory: PropTypes.string.isRequired,
     strDrink: PropTypes.string.isRequired,
-  }),
+  }).isRequired,
 };
 
 export default Food;
