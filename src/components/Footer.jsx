@@ -8,24 +8,24 @@ import './Footer.css';
 
 const Footer = () => (
   <div className="Footer_father">
-    <Link to="/cocktails">
+    <Link to="/bebidas">
       <img
         className={'Footer_icon'}
-        alt={'footer icon'}
+        alt={'drinks icon'}
         src={drinkIcon}
       />
     </Link>
-    <Link to="/explore">
+    <Link to="/explorar">
       <img
         className={'Footer_icon'}
-        alt={'footer icon'}
+        alt={'explore icon'}
         src={explorerIcon}
       />
     </Link>
-    <Link to="/meals">
+    <Link to="/comidas">
       <img
         className={'Footer_icon'}
-        alt={'footer icon'}
+        alt={'meals icon'}
         src={foodIcon}
       />
     </Link>
