@@ -8,14 +8,12 @@ const arrayOfLetters = [
   'g',
   'h',
   'i',
-  'j',
   'k',
   'l',
   'm',
   'n',
   'o',
   'p',
-  'q',
   'r',
   's',
   't',
@@ -23,6 +21,7 @@ const arrayOfLetters = [
   'v',
 ];
 const generateRandomLetter = () => {
-  return arrayOfLetters[Math.floor(Math.random() * 22)];
+  const randomPosition = Math.floor(Math.random() * 20);
+  return arrayOfLetters[randomPosition];
 };
 export default generateRandomLetter;

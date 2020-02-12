@@ -5,17 +5,17 @@ import generateRandomLetter from '../services/randomLetter';
 import './Categories.css';
 
 function updateAPI(category, setResult) {
-  mealAPI(`filter.php?c=${category}`, setResult);
+  mealAPI(`filter.php?c=${category}`, setResult);  
 }
 
 function buttonAll(setResult) {
   return (
     <button
-    className="category-button"
+      className="category-button"
       data-testid="all-category-filter"
       type="button"
       onClick={() =>
-        mealAPI(`search.php?s=${generateRandomLetter()}`, setResult)
+        mealAPI(`search.php?s=${generateRandomLetter()}`, setResult, true)
       }
     >
       All
@@ -46,9 +46,9 @@ function generateCategories(categories, setResult) {
 }
 
 function Categories() {
-  const { mealsCategory, setResult } = useContext(context);
+  const { mealsCategory, setResult, result } = useContext(context);
   return (
-    <div>{generateCategories(mealsCategory.meals.slice(0, 5), setResult)}</div>
+    <div>{generateCategories(mealsCategory.meals.slice(0, 5), setResult,)}</div>
   );
 }
 
