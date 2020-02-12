@@ -7,8 +7,10 @@ import context from '../context/context';
 import '../styles/Header.css';
 import '../styles/inputSearch.css';
 
+
 const Header = () => {
   const { isShowInput, setIsShowInput } = useContext(context);
+  const boolean = () => isShowInput ? false : true;
   return (
     <div>
       <div className="Header_separating-icons">
@@ -17,7 +19,7 @@ const Header = () => {
         <img
           src={IconSearch}
           alt="Icon to Search"
-          onClick={() => setIsShowInput(isShowInput ? false : true)}
+          onClick={() => setIsShowInput(boolean)}
         />
       </div>
       <InputHeader />

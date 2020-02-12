@@ -43,7 +43,7 @@ const RadioToSearch = () => (
 
 const InputHeader = () => {
   const { isShowInput } = useContext(context);
-  if (!isShowInput) return <div></div>
+  if (!isShowInput) return <div />;
   return (
     <div className="Header_input">
       <InputSearch />
