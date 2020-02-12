@@ -9,14 +9,14 @@ const Provider = ({ children }) => {
   const [disabled, setDisabled] = useState(true);
   const [searchInput, setSearchInput] = useState('');
 
-    useEffect(() => {
-      const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-      if (userPassword.length >= 6 && emailRegex.test(userEmail)) {
-        setDisabled(false);
-      } else {
-        setDisabled(true);
-      }
-    }, [userEmail, userPassword]);
+  useEffect(() => {
+    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    if (userPassword.length >= 6 && emailRegex.test(userEmail)) {
+      setDisabled(false);
+    } else {
+      setDisabled(true);
+    }
+  }, [userEmail, userPassword]);
 
   const storeContext = {
     userEmail,
