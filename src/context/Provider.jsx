@@ -25,6 +25,8 @@ const Provider = ({ children }) => {
     setUserPassword,
     disabled,
     setDisabled,
+    searchInput,
+    setSearchInput,
   };
 
   return (
