@@ -35,7 +35,7 @@ function Food({ data, pathname, index }) {
   );
 }
 
-Categories.propTypes = {
+Food.propTypes = {
   pathname: PropTypes.string.isRequired,
   index: PropTypes.string.isRequired,
   data: PropTypes.shape({
