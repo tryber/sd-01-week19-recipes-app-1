@@ -5,7 +5,6 @@ import explorerIcon from '../img/explorerIcon.svg';
 import foodIcon from '../img/foodIcon.svg';
 import './Footer.css';
 
-
 const Footer = () => (
   <div className="Footer_father">
     <Link to="/bebidas">
