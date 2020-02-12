@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-
 import context from './context';
 
 const Provider = ({ children }) => {
@@ -8,6 +7,7 @@ const Provider = ({ children }) => {
   const [userPassword, setUserPassword] = useState('');
   const [disabled, setDisabled] = useState(true);
   const [searchInput, setSearchInput] = useState('');
+  const [isShowInput, setIsShowInput] = useState(false);
 
   useEffect(() => {
     const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
@@ -27,6 +27,8 @@ const Provider = ({ children }) => {
     setDisabled,
     searchInput,
     setSearchInput,
+    isShowInput,
+    setIsShowInput,
   };
 
   return (
