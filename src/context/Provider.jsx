@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
 import context from './context';
 
 const Provider = ({ children }) => {
@@ -10,6 +9,7 @@ const Provider = ({ children }) => {
   const [currentFood, setCurrentFood] = useState('Comidas');
   const [category, setCategory] = useState();
   const [searchInput, setSearchInput] = useState('');
+  const [isShowInput, setIsShowInput] = useState(false);
 
   const storeContext = {
     disabled,
@@ -24,6 +24,8 @@ const Provider = ({ children }) => {
     setCategory,
     searchInput,
     setSearchInput,
+    isShowInput,
+    setIsShowInput,
   };
 
   return <context.Provider value={storeContext}>{children}</context.Provider>;
