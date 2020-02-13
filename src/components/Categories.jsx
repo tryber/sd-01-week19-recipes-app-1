@@ -5,7 +5,7 @@ import { mealAPI, drinkAPI } from '../services/foodAPI';
 import generateRandomLetter from '../services/randomLetter';
 import './Categories.css';
 
-function updateAPI(category, setResult, api, previousCategory, setCategory) {
+function updateAPI(category, setResult, api) {
   api(`filter.php?c=${category}`, setResult);
 }
 

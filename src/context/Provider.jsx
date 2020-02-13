@@ -10,7 +10,7 @@ const Provider = ({ children }) => {
   const [currentFood, setCurrentFood] = useState('Comidas');
   const [category, setCategory] = useState();
   const [searchInput, setSearchInput] = useState('');
- 
+
   const storeContext = {
     disabled,
     setDisabled,
