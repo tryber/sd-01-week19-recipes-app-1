@@ -64,7 +64,7 @@ function Categories({ pathname }) {
   const { foodCategory, setResult, category, setCategory } = useContext(
     context,
   );
-  if (pathname === '/receitas/comidas') {
+  if (foodCategory.meals) {
     return (
       <div>
         {generateCategories(

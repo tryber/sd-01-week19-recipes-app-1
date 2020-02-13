@@ -29,6 +29,18 @@ function FoodPage({location: { pathname }}) {
       drinkAPI('list.php?c=list', setFoodCategory);
     }
   }, []);
+  useEffect(() => {
+    document.title = currentFood;
+    if (pathname === '/receitas/comidas') {
+      setResult();
+      mealAPI(`search.php?s=${generateRandomLetter()}`, setResult, true);
+      mealAPI('list.php?c=list', setFoodCategory);
+    } else {
+      setResult();
+      drinkAPI(`search.php?s=${generateRandomLetter()}`, setResult, true);
+      drinkAPI('list.php?c=list', setFoodCategory);
+    }
+  }, [pathname]);
 console.log(result);
   if (foodCategory && result) {
     if (isShowInput) {

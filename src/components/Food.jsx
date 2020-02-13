@@ -46,7 +46,7 @@ function drink(data, index) {
 }
 
 function Food({ data, pathname, index }) {
-  if (pathname === '/receitas/comidas') {
+  if (data.idMeal) {
     return meal(data, index);
   }
   return drink(data, index);
