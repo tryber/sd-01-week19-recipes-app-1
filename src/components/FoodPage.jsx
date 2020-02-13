@@ -6,8 +6,9 @@ import context from '../context/context';
 import Header from './Header';
 import { mealAPI, drinkAPI } from '../services/foodAPI';
 import generateRandomLetter from '../services/randomLetter';
+import '../styles/FoodPage.css';
 
-function FoodPage({location: { pathname }}) {
+function FoodPage({ location: { pathname } }) {
   const {
     result,
     setResult,
@@ -28,27 +29,17 @@ function FoodPage({location: { pathname }}) {
       drinkAPI(`search.php?s=${generateRandomLetter()}`, setResult, true);
       drinkAPI('list.php?c=list', setFoodCategory);
     }
-  }, []);
-  useEffect(() => {
-    document.title = currentFood;
-    if (pathname === '/receitas/comidas') {
-      setResult();
-      mealAPI(`search.php?s=${generateRandomLetter()}`, setResult, true);
-      mealAPI('list.php?c=list', setFoodCategory);
-    } else {
-      setResult();
-      drinkAPI(`search.php?s=${generateRandomLetter()}`, setResult, true);
-      drinkAPI('list.php?c=list', setFoodCategory);
-    }
   }, [pathname]);
-console.log(result);
+
   if (foodCategory && result) {
     if (isShowInput) {
       return (
         <div>
           <Header />
           <FoodList result={result} pathname={pathname} />
-          <Footer />
+          <div className="footer-container">
+            <Footer />
+          </div>
         </div>
       );
     }
@@ -57,7 +48,9 @@ console.log(result);
         <Header />
         <Categories pathname={pathname} />
         <FoodList result={result} pathname={pathname} />
-        <Footer />
+        <div className="footer-container">
+          <Footer />
+        </div>
       </div>
     );
   }
