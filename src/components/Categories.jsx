@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import context from '../context/context';
 import { mealAPI, drinkAPI } from '../services/foodAPI';
 import generateRandomLetter from '../services/randomLetter';
-import './Categories.css';
+import '../styles/Categories.css';
 
 function updateAPI(category, setResult, api) {
   api(`filter.php?c=${category}`, setResult);

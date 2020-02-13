@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Food from './Food';
-import './Food.css';
+import '../styles/Food.css';
 
 function generateFoodsList(result, pathname) {
   return result.map((food, index) => (

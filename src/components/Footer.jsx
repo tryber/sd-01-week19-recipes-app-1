@@ -7,7 +7,7 @@ import '../styles/Footer.css';
 
 const Footer = () => (
   <div className="Footer_father">
-    <Link to="/bebidas">
+    <Link to="/receitas/bebidas">
       <img
         className={'Footer_icon'}
         data-testid="drinks-bottom-btn"
@@ -23,7 +23,7 @@ const Footer = () => (
         src={explorerIcon}
       />
     </Link>
-    <Link to="/comidas">
+    <Link to="/receitas/comidas">
       <img
         className={'Footer_icon'}
         data-testid="food-bottom-btn"
