@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 import context from '../context/context';
 import { mealAPI, drinkAPI } from '../services/foodAPI';
 import generateRandomLetter from '../services/randomLetter';
@@ -60,7 +59,7 @@ function generateCategories(
   );
 }
 
-function Categories({ pathname }) {
+function Categories() {
   const { foodCategory, setResult, category, setCategory } = useContext(
     context,
   );
@@ -89,9 +88,5 @@ function Categories({ pathname }) {
     </div>
   );
 }
-
-Categories.propTypes = {
-  pathname: PropTypes.string.isRequired,
-};
 
 export default Categories;
