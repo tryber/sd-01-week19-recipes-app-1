@@ -4,6 +4,10 @@ import Food from './Food';
 import '../styles/Food.css';
 
 function generateFoodsList(result, pathname) {
+  console.log(result);
+  if(!result) {
+    return <div>Nenhuma receita encontrada</div>
+  }
   return result.map((food, index) => (
     <Food
       index={index}
@@ -15,7 +19,6 @@ function generateFoodsList(result, pathname) {
 }
 
 function FoodList({ result, pathname }) {
-  console.log(result);
   if (result.meals) {
     return (
       <div className="food-list">
