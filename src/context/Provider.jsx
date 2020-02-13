@@ -8,7 +8,17 @@ const Provider = ({ children }) => {
   const [result, setResult] = useState();
   const [foodCategory, setFoodCategory] = useState();
   const [currentFood, setCurrentFood] = useState('Comidas');
+  const [searchInput, setSearchInput] = useState('');
+ 
 
+  useEffect(() => {
+    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    if (userPassword.length >= 6 && emailRegex.test(userEmail)) {
+      setDisabled(false);
+    } else {
+      setDisabled(true);
+    }
+  }, [userEmail, userPassword]);
   const storeContext = {
     disabled,
     setDisabled,
@@ -18,6 +28,8 @@ const Provider = ({ children }) => {
     setFoodCategory,
     currentFood,
     setCurrentFood,
+    searchInput,
+    setSearchInput,
   };
 
   return <context.Provider value={storeContext}>{children}</context.Provider>;
