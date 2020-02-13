@@ -35,7 +35,7 @@ const Footer = () => {
           data-testid="drinks-bottom-btn"
           alt={'drinks icon'}
           src={drinkIcon}
-          onClick={() => setNewFood(setCurrentFood, 'Comidas')}
+          onClick={() => setNewFood(setCurrentFood, 'Bebidas')}
         />
       </Link>
       {linkToExplore()}
@@ -46,7 +46,7 @@ const Footer = () => {
           data-testid="food-bottom-btn"
           alt={'meals icon'}
           src={foodIcon}
-          onClick={() => setNewFood(setCurrentFood, 'Bebidas')}
+          onClick={() => setNewFood(setCurrentFood, 'Comidas')}
         />
       </Link>
     </div>
