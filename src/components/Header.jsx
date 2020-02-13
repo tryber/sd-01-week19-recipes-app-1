@@ -15,7 +15,8 @@ const Header = () => {
       <div className="Header_separating-icons">
         <Link to="/profile"><img src={IconProfile} alt="Icon Profiler" /></Link>
         <h1>Header</h1>
-        <img
+        <input
+          type="image"
           src={IconSearch}
           alt="Icon to Search"
           onClick={() => setIsShowInput(!isShowInput)}
