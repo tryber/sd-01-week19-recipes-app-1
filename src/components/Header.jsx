@@ -7,7 +7,6 @@ import context from '../context/context';
 import '../styles/Header.css';
 import '../styles/inputSearch.css';
 
-
 const Header = () => {
   const { isShowInput, setIsShowInput } = useContext(context);
   return (
@@ -26,6 +25,5 @@ const Header = () => {
     </div>
   );
 };
-
 
 export default Header;
