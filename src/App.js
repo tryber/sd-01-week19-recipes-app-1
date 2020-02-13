@@ -1,16 +1,15 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-
-import Profile from './components/Profile';
-import Home from './components/Home';
-
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import LoginPage from './components/LoginPage';
+import FoodPage from './components/FoodPage';
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/profile" component={Profile} />
+        <Route exact path="/" component={LoginPage} />
+        <Route path="/receitas/comidas" component={FoodPage} />
+        <Route path="/receitas/bebidas" component={FoodPage} />
       </Switch>
     </BrowserRouter>
   );

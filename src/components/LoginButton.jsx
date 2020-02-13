@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import context from '../context/context';
 
 const LoginButton = () => {
@@ -11,15 +12,17 @@ const LoginButton = () => {
   };
 
   return (
-    <button
-      type="button"
-      className="access-button"
-      onClick={submition}
-      disabled={disabled}
-      data-testid="login-submit-btn"
-    >
-      Entrar
-    </button>
+    <Link to="/receitas/comidas">
+      <button
+        type="button"
+        className="access-button"
+        onClick={submition}
+        disabled={disabled}
+        data-testid="login-submit-btn"
+      >
+        Entrar
+      </button>
+    </Link>
   );
 };
 
