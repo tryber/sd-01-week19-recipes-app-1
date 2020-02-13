@@ -8,6 +8,7 @@ const Provider = ({ children }) => {
   const [result, setResult] = useState();
   const [foodCategory, setFoodCategory] = useState();
   const [currentFood, setCurrentFood] = useState('Comidas');
+  const [category, setCategory] = useState();
 
   const storeContext = {
     disabled,
@@ -18,6 +19,8 @@ const Provider = ({ children }) => {
     setFoodCategory,
     currentFood,
     setCurrentFood,
+    category,
+    setCategory,
   };
 
   return <context.Provider value={storeContext}>{children}</context.Provider>;

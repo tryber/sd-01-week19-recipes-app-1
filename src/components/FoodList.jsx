@@ -8,7 +8,7 @@ function generateFoodsList(result, pathname) {
     <Food
       index={index}
       pathname={pathname}
-      key={`${food.idfood}1`}
+      key={`${food.strSource}`}
       data={food}
     />
   ));
@@ -24,7 +24,7 @@ function FoodList({ result, pathname }) {
   }
   return (
     <div className="food-list">
-      {generateFoodsList(result.drinks, pathname)}{' '}
+      {generateFoodsList(result.drinks, pathname)}
     </div>
   );
 }
