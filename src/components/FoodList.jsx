@@ -8,7 +8,7 @@ function generateFoodsList(result, pathname) {
     <Food
       index={index}
       pathname={pathname}
-      key={`${food.strSource}`}
+      key={`${food.strSource} ${index}`}
       data={food}
     />
   ));
