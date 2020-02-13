@@ -9,7 +9,8 @@ const Provider = ({ children }) => {
   const [foodCategory, setFoodCategory] = useState();
   const [currentFood, setCurrentFood] = useState('Comidas');
   const [category, setCategory] = useState();
-
+  const [searchInput, setSearchInput] = useState('');
+ 
   const storeContext = {
     disabled,
     setDisabled,
@@ -21,6 +22,8 @@ const Provider = ({ children }) => {
     setCurrentFood,
     category,
     setCategory,
+    searchInput,
+    setSearchInput,
   };
 
   return <context.Provider value={storeContext}>{children}</context.Provider>;
