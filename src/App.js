@@ -1,9 +1,11 @@
 import React from 'react';
+
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import './App.css';
 import LoginPage from './components/LoginPage';
 import ProfilePage from './components/ProfilePage';
+import FoodPage from './components/FoodPage';
+
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/explorar/bebidas/ingredientes" />
         <Route path="/explorar/comidas/area" />
         <Route path="/perfil" component={ProfilePage} />
+        <Route path="/receitas/comidas" component={FoodPage} />
+        <Route path="/receitas/bebidas" component={FoodPage} />
       </Switch>
     </BrowserRouter>
   );
