@@ -15,6 +15,7 @@ function generateFoodsList(result, pathname) {
 }
 
 function FoodList({ result, pathname }) {
+  console.log(result);
   if (pathname === '/receitas/comidas') {
     return (
       <div className="food-list">

@@ -24,7 +24,13 @@ function buttonAll(setResult, api) {
   );
 }
 
-function generateCategories(categories, setResult, api, previousCategory, setCategory) {
+function generateCategories(
+  categories,
+  setResult,
+  api,
+  previousCategory,
+  setCategory,
+) {
   return (
     <div className="category-container">
       {buttonAll(setResult, api)}
@@ -37,7 +43,13 @@ function generateCategories(categories, setResult, api, previousCategory, setCat
             data-testid={`${strCategory}-category-filter`}
             type="button"
             onClick={() =>
-              updateAPI(strCategory, setResult, api, previousCategory, setCategory)
+              updateAPI(
+                strCategory,
+                setResult,
+                api,
+                previousCategory,
+                setCategory,
+              )
             }
           >
             {strCategory}

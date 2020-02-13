@@ -10,7 +10,7 @@ import '../styles/inputSearch.css';
 const Header = () => {
   const { isShowInput, setIsShowInput } = useContext(context);
   return (
-    <div className="Header_separating-icons">
+    <div>
       <div className="Header_separating-icons">
         <Link to="/profile"><img src={IconProfile} alt="Icon Profiler" /></Link>
         <h1>Header</h1>
