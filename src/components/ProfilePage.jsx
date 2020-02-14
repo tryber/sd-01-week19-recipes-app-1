@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import ProfileLogout from './ProfileLogout';
-
 import Footer from './Footer';
 import Header from './Header';
 import context from '../context/context';
