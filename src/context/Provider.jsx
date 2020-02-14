@@ -13,6 +13,7 @@ const Provider = ({ children }) => {
   const [isShowInput, setIsShowInput] = useState(false);
   const [empty, setEmpty] = useState();
   const [detailsData, setDetailsData] = useState();
+  const [recommendeds, setRecommendeds] = useState();
 
   const storeContext = {
     disabled,
@@ -35,6 +36,8 @@ const Provider = ({ children }) => {
     empty,
     detailsData,
     setDetailsData,
+    recommendeds,
+    setRecommendeds,
   };
 
   return <context.Provider value={storeContext}>{children}</context.Provider>;
