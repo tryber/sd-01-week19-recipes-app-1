@@ -56,6 +56,7 @@ const InputHeader = () => {
     setSearchInput,
     searchInput,
     currentFood,
+    setEmpty
   } = useContext(context);
   const [typeOfSearch, setTypeOfSearch] = useState('');
 
@@ -69,6 +70,7 @@ const InputHeader = () => {
       }
       return drinkAPI(`${typeOfSearch}${searchInput}`, setResult);
     }
+    return setEmpty('');
   }, [searchInput, typeOfSearch]);
 
   if (!isShowInput) return <div />;
