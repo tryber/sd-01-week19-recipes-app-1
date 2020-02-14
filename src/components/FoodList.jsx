@@ -1,21 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Food from './Food';
-import './Food.css';
+import '../styles/Food.css';
 
 function generateFoodsList(result, pathname) {
+  if (!result) {
+    return <div>Nenhuma receita encontrada</div>;
+  }
   return result.map((food, index) => (
     <Food
       index={index}
       pathname={pathname}
-      key={`${food.strSource}`}
+      key={`${food.strSource} ${(index * 3)}`}
       data={food}
     />
   ));
 }
 
 function FoodList({ result, pathname }) {
-  if (pathname === '/receitas/comidas') {
+  if (result.meals) {
     return (
       <div className="food-list">
         {generateFoodsList(result.meals, pathname)}
