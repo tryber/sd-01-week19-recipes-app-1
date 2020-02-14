@@ -1,0 +1,41 @@
+.image-details {
+  height: 10em;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+}
+.details-name {
+  align-items: flex-end;
+  display: flex;
+  font-family: Roboto;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: normal;
+  height: 35px;
+  left: 8px;
+  line-height: 35px;
+  top: 165px;
+  width: 182px;
+}
+.details-name-share-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 35px;
+  justify-content: space-between;
+  margin: 0.4em;
+}
+.details-category {
+  align-items: flex-end;
+  color: #A9A9A9;
+  display: flex;
+  font-family: Roboto;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: normal;
+  height: 25px;
+  left: 9px;
+  line-height: 25px;
+  top: 200px;
+  width: 73px;
+}
