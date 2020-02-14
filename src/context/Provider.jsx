@@ -12,6 +12,7 @@ const Provider = ({ children }) => {
   const [searchInput, setSearchInput] = useState('');
   const [isShowInput, setIsShowInput] = useState(false);
   const [empty, setEmpty] = useState();
+  const [clipboardCopied, setClipboardCopied] = useState(false);
 
   const storeContext = {
     disabled,
@@ -32,6 +33,8 @@ const Provider = ({ children }) => {
     setEmail,
     setEmpty,
     empty,
+    clipboardCopied,
+    setClipboardCopied,
   };
 
   return <context.Provider value={storeContext}>{children}</context.Provider>;
