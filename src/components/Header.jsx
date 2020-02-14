@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import IconProfile from '../img/iconProfile.png';
 import IconSearch from '../img/iconSearch.png';
@@ -8,7 +8,7 @@ import '../styles/Header.css';
 import '../styles/inputSearch.css';
 
 const Header = () => {
-  const { isShowInput, setIsShowInput, currentFood, hiddenIcon} = useContext(context);
+  const { isShowInput, setIsShowInput, currentFood, hiddenIcon } = useContext(context);
 
   return (
     <div>

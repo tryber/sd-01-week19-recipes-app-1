@@ -1,4 +1,4 @@
-body, html {
+body ,html {
   height: 100%;
 }
 
@@ -10,6 +10,7 @@ body, html {
   margin: 10px;
   width: 250px;
 }
+
 .every-elements {
   align-items: center;
   display: flex;
@@ -19,7 +20,7 @@ body, html {
 }
 
 .footer {
-  position:absolute;
   bottom: 0;
-  width:100%;
+  position: absolute;
+  width: 100%;
 }

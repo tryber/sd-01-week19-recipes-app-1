@@ -15,7 +15,7 @@ const ProfilePage = ({ location: { pathname } }) => {
     if (pathname === '/perfil') {
       setCurrentFood('Perfil');
       setHiddenIcon('icon_searc');
-    } 
+    }
   }, [pathname]);
 
   return (
@@ -36,6 +36,12 @@ const ProfilePage = ({ location: { pathname } }) => {
       </div>
     </div>
   );
+};
+
+ProfilePage.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default ProfilePage;

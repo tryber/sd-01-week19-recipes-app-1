@@ -1,4 +1,3 @@
- 
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import context from './context';
@@ -16,16 +15,26 @@ const Provider = ({ children }) => {
   const [hiddenIcon, setHiddenIcon] = useState('');
 
   const storeContext = {
-    disabled, setDisabled,
-    result, setResult,
-    foodCategory, setFoodCategory,
-    currentFood, setCurrentFood,
-    category, setCategory,
-    searchInput, setSearchInput,
-    isShowInput, setIsShowInput,
-    email, setEmail,
-    setEmpty, empty,
-    hiddenIcon, setHiddenIcon,
+    disabled,
+    setDisabled,
+    result,
+    setResult,
+    foodCategory,
+    setFoodCategory,
+    currentFood,
+    setCurrentFood,
+    category,
+    setCategory,
+    searchInput,
+    setSearchInput,
+    isShowInput,
+    setIsShowInput,
+    email,
+    setEmail,
+    setEmpty,
+    empty,
+    hiddenIcon,
+    setHiddenIcon,
   };
 
   return <context.Provider value={storeContext}>{children}</context.Provider>;
