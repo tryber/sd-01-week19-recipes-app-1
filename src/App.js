@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import LoginPage from './components/LoginPage';
 import FoodPage from './components/FoodPage';
+import IngredientsExploreScreen from './components/IngredientsExploreScreen';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Route exact path="/" component={LoginPage} />
         <Route path="/receitas/comidas" component={FoodPage} />
         <Route path="/receitas/bebidas" component={FoodPage} />
+        <Route path="/teste" component={IngredientsExploreScreen} />
       </Switch>
     </BrowserRouter>
   );
