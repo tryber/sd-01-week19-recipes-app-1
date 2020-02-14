@@ -1,0 +1,10 @@
+body {
+  height: 100%;
+}
+
+.Explore_Ingredients-father {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+}

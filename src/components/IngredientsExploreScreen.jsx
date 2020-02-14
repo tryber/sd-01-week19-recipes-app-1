@@ -5,7 +5,7 @@ import IngredientsFromAPI from './IngredientsFromAPI';
 import '../styles/ingredientsExploreScreen.css';
 
 const IngredientsExploreScreen = () => (
-  <div>
+  <div className="Explore_Ingredients-father">
     <Header />
     <IngredientsFromAPI />
     <Footer />

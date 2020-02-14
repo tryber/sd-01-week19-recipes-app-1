@@ -1,7 +1,7 @@
 import React from 'react';
 
 const IngredientsFromAPI = () => (
-  <div>Teste</div>
-)
+  <div>Testezinho</div>
+);
 
 export default IngredientsFromAPI;
