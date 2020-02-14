@@ -11,12 +11,15 @@
   margin-left: 0.4em;
   width: 138px;
 }
+
 .ingredients-container {
   background: #ECECEC;
   border-radius: 4px;
   margin: 0 auto;
   width: 350px;
+  padding: 0.3em;
 }
+
 .ingredient {
   align-items: flex-end;
   color: #000000;
@@ -25,5 +28,5 @@
   font-size: 21px;
   font-style: normal;
   font-weight: normal;
-  line-height: 25px;
+  line-height: 12px;
 }
