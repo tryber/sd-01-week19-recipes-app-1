@@ -8,8 +8,8 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={LoginPage} />
-        <Route path="/receitas/comidas" component={FoodPage} />
-        <Route path="/receitas/bebidas" component={FoodPage} />
+        <Route exact path="/receitas/comidas" component={FoodPage} />
+        <Route exact path="/receitas/bebidas" component={FoodPage} />
       </Switch>
     </BrowserRouter>
   );
