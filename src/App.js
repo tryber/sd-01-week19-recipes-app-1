@@ -23,8 +23,8 @@ function App() {
         <Route path="/explorar/bebidas/ingredientes" />
         <Route path="/explorar/comidas/area" />
         <Route path="/perfil" component={ProfilePage} />
-        <Route path="/receitas/comidas" component={FoodPage} />
-        <Route path="/receitas/bebidas" component={FoodPage} />
+        <Route exact path="/receitas/comidas" component={FoodPage} />
+        <Route exact path="/receitas/bebidas" component={FoodPage} />
       </Switch>
     </BrowserRouter>
   );

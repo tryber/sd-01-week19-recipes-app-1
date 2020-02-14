@@ -5,11 +5,13 @@ import context from './context';
 const Provider = ({ children }) => {
   const [disabled, setDisabled] = useState(true);
   const [result, setResult] = useState();
+  const [email, setEmail] = useState();
   const [foodCategory, setFoodCategory] = useState();
   const [currentFood, setCurrentFood] = useState('Comidas');
   const [category, setCategory] = useState();
   const [searchInput, setSearchInput] = useState('');
   const [isShowInput, setIsShowInput] = useState(false);
+  const [empty, setEmpty] = useState();
 
   const storeContext = {
     disabled,
@@ -26,6 +28,10 @@ const Provider = ({ children }) => {
     setSearchInput,
     isShowInput,
     setIsShowInput,
+    email,
+    setEmail,
+    setEmpty,
+    empty,
   };
 
   return <context.Provider value={storeContext}>{children}</context.Provider>;
