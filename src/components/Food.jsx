@@ -3,9 +3,17 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import '../styles/Food.css';
 
+function saveFood(data) {
+  localStorage.setItem('foodData', JSON.stringify(data));
+}
+
 function meal(data, index) {
   return (
-    <Link to={`/receitas/comidas/${data.idMeal}`} className="food-container">
+    <Link
+      to={`/receitas/comidas/${data.idMeal}`}
+      onClick={() => saveFood(data)}
+      className="food-container"
+    >
       <div>
         <img
           className="food-image"
@@ -26,7 +34,11 @@ function meal(data, index) {
 
 function drink(data, index) {
   return (
-    <Link to={`/receitas/bebidas/${data.idDrink}`} className="food-container">
+    <Link
+      to={`/receitas/bebidas/${data.idDrink}`}
+      onClick={() => saveFood(data)}
+      className="food-container"
+    >
       <div>
         <img
           className="food-image"
