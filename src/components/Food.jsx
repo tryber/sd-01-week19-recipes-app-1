@@ -29,7 +29,7 @@ function drink(data, index) {
     <Link to={`/receitas/bebidas/${data.idDrink}`} className="food-container">
       <div>
         <img
-        className="food-image"
+          className="food-image"
           data-testid={`${index}-card-img`}
           src={data.strDrinkThumb}
           alt="img"
@@ -45,7 +45,7 @@ function drink(data, index) {
   );
 }
 
-function Food({ data, pathname, index }) {
+function Food({ data, index }) {
   if (data.idMeal) {
     return meal(data, index);
   }
@@ -53,7 +53,6 @@ function Food({ data, pathname, index }) {
 }
 
 Food.propTypes = {
-  pathname: PropTypes.string.isRequired,
   index: PropTypes.string.isRequired,
   data: PropTypes.shape({
     idMeal: PropTypes.string.isRequired,

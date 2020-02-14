@@ -4,9 +4,8 @@ import Food from './Food';
 import '../styles/Food.css';
 
 function generateFoodsList(result, pathname) {
-  console.log(result);
-  if(!result) {
-    return <div>Nenhuma receita encontrada</div>
+  if (!result) {
+    return <div>Nenhuma receita encontrada</div>;
   }
   return result.map((food, index) => (
     <Food

@@ -1,23 +1,21 @@
 import React, { useContext, useState } from 'react';
+import { useEffect } from 'react';
 import { DebounceInput } from 'react-debounce-input';
 import { mealAPI, drinkAPI } from '../services/foodAPI';
 import context from '../context/context';
 import '../styles/inputSearch.css';
-import { useEffect } from 'react';
 
-const InputSearch = (setSearchInput, typeOfSearch, searchInput) => {
-  return (
-    <DebounceInput
-      className="text-input"
-      data-testid="search-input"
-      value={searchInput}
-      debounceTimeout={600}
-      placeholder="Buscar receita"
-      onChange={(e) => setSearchInput(e.target.value)}
-      maxLength={typeOfSearch === 'search.php?f=' ? '1' : false}
-    />
-  );
-};
+const InputSearch = (setSearchInput, typeOfSearch, searchInput) => (
+  <DebounceInput
+    className="text-input"
+    data-testid="search-input"
+    value={searchInput}
+    debounceTimeout={600}
+    placeholder="Buscar receita"
+    onChange={(e) => setSearchInput(e.target.value)}
+    maxLength={typeOfSearch === 'search.php?f=' ? '1' : false}
+  />
+);
 
 const RadioToSearch = (setTypeOfSearch) => (
   <div className="radios-input">
@@ -72,6 +70,7 @@ const InputHeader = () => {
         drinkAPI(`${typeOfSearch}${searchInput}`, setResult);
       }
     }
+    return '';
   }, [searchInput, typeOfSearch]);
 
   if (!isShowInput) return <div />;

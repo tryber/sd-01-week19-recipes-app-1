@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Categories from './Categories';
 import Footer from './Footer';
 import FoodList from './FoodList';
@@ -56,5 +57,11 @@ function FoodPage({ location: { pathname } }) {
   }
   return <div>Loading...</div>;
 }
+
+FoodPage.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default FoodPage;
