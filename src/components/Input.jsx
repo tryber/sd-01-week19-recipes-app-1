@@ -56,7 +56,7 @@ const InputHeader = () => {
     setSearchInput,
     searchInput,
     currentFood,
-    setEmpty
+    setEmpty,
   } = useContext(context);
   const [typeOfSearch, setTypeOfSearch] = useState('');
 
@@ -66,7 +66,7 @@ const InputHeader = () => {
     }
     if (typeOfSearch !== '' && searchInput !== '') {
       if (currentFood === 'Comidas') {
-      return mealAPI(`${typeOfSearch}${searchInput}`, setResult);
+        return mealAPI(`${typeOfSearch}${searchInput}`, setResult);
       }
       return drinkAPI(`${typeOfSearch}${searchInput}`, setResult);
     }
