@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ProfileLogout from './ProfileLogout';
 
 import Footer from './Footer';
 import Header from './Header';
+import context from '../context/context';
 import '../styles/ProfilePage.css';
 
-
-const ProfilePage = () => {
+const ProfilePage = ({ location: { pathname } }) => {
   const userEmail = JSON.parse(localStorage.getItem('user'));
+  const { setCurrentFood } = useContext(context);
+
+  useEffect(() => {
+    if (pathname === '/perfil') {
+      setCurrentFood('Perfil');
+    }
+  }, [pathname]);
+
   return (
     <div>
       <Header />
@@ -22,7 +30,9 @@ const ProfilePage = () => {
         </Link>
         <ProfileLogout />
       </div>
+      <div className="footer">
         <Footer />
+      </div>
     </div>
   );
 };

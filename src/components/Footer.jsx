@@ -1,40 +1,56 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import drinkIcon from '../img/drinkIcon.svg';
+import context from '../context/context';
 import explorerIcon from '../img/explorerIcon.svg';
 import foodIcon from '../img/foodIcon.svg';
 import '../styles/Footer.css';
 
-const Footer = () => (
-  <div className="footer">
+function setNewFood(setCurrentFood, param) {
+  setCurrentFood(param);
+}
+
+function linkToExplore() {
+  return (
+    <Link to="/explorar">
+      <input
+        type="image"
+        className={'Footer_icon'}
+        data-testid="explore-bottom-btn"
+        alt={'explore icon'}
+        src={explorerIcon}
+      />
+    </Link>
+  );
+}
+
+const Footer = () => {
+  const { setCurrentFood } = useContext(context);
+  return (
     <div className="Footer_father">
-      <Link to="/bebidas">
-        <img
+      <Link to="/receitas/bebidas">
+        <input
+          type="image"
           className={'Footer_icon'}
           data-testid="drinks-bottom-btn"
           alt={'drinks icon'}
           src={drinkIcon}
+          onClick={() => setNewFood(setCurrentFood, 'Bebidas')}
         />
       </Link>
-      <Link to="/explorar">
-        <img
-          className={'Footer_icon'}
-          data-testid="explore-bottom-btn"
-          alt={'explore icon'}
-          src={explorerIcon}
-        />
-      </Link>
-      <Link to="/comidas">
-        <img
+      {linkToExplore()}
+      <Link to="/receitas/comidas">
+        <input
+          type="image"
           className={'Footer_icon'}
           data-testid="food-bottom-btn"
           alt={'meals icon'}
           src={foodIcon}
+          onClick={() => setNewFood(setCurrentFood, 'Comidas')}
         />
       </Link>
     </div>
-  </div>
-
-);
+  );
+};
 
 export default Footer;

@@ -8,19 +8,12 @@ import '../styles/Header.css';
 import '../styles/inputSearch.css';
 
 const Header = () => {
-  const { isShowInput, setIsShowInput } = useContext(context);
-  console.log(window.location.pathname)
+  const { isShowInput, setIsShowInput, currentFood } = useContext(context);
   return (
     <div>
       <div className="Header_separating-icons">
-        <Link to="/perfil">
-          <img 
-            src={IconProfile} 
-            alt="Icon Profiler"
-            className={'Header_icon'}
-          />
-        </Link>
-        <h1>Header</h1>
+        <Link to="/perfil"><img src={IconProfile} alt="Icon Profiler" /></Link>
+        <h1>{currentFood}</h1>
         <input
           type="image"
           src={IconSearch}
