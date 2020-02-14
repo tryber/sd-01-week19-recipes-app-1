@@ -13,26 +13,19 @@ const Provider = ({ children }) => {
   const [searchInput, setSearchInput] = useState('');
   const [isShowInput, setIsShowInput] = useState(false);
   const [empty, setEmpty] = useState();
+  const [hiddenIcon, setHiddenIcon] = useState('');
 
   const storeContext = {
-    disabled,
-    setDisabled,
-    result,
-    setResult,
-    foodCategory,
-    setFoodCategory,
-    currentFood,
-    setCurrentFood,
-    category,
-    setCategory,
-    searchInput,
-    setSearchInput,
-    isShowInput,
-    setIsShowInput,
-    email,
-    setEmail,
-    setEmpty,
-    empty,
+    disabled, setDisabled,
+    result, setResult,
+    foodCategory, setFoodCategory,
+    currentFood, setCurrentFood,
+    category, setCategory,
+    searchInput, setSearchInput,
+    isShowInput, setIsShowInput,
+    email, setEmail,
+    setEmpty, empty,
+    hiddenIcon, setHiddenIcon,
   };
 
   return <context.Provider value={storeContext}>{children}</context.Provider>;

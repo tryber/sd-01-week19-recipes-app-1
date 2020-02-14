@@ -9,12 +9,13 @@ import '../styles/ProfilePage.css';
 
 const ProfilePage = ({ location: { pathname } }) => {
   const userEmail = JSON.parse(localStorage.getItem('user'));
-  const { setCurrentFood } = useContext(context);
+  const { setCurrentFood, setHiddenIcon } = useContext(context);
 
   useEffect(() => {
     if (pathname === '/perfil') {
       setCurrentFood('Perfil');
-    }
+      setHiddenIcon('icon_searc');
+    } 
   }, [pathname]);
 
   return (

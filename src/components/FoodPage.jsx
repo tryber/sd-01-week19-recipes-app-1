@@ -17,6 +17,7 @@ function FoodPage({ location: { pathname } }) {
     foodCategory,
     setCurrentFood,
     isShowInput,
+    setHiddenIcon,
   } = useContext(context);
 
   useEffect(() => {
@@ -25,11 +26,13 @@ function FoodPage({ location: { pathname } }) {
       mealAPI(`search.php?s=${generateRandomLetter()}`, setResult, true);
       mealAPI('list.php?c=list', setFoodCategory);
       setCurrentFood('Comidas');
+      setHiddenIcon('icon');
     } else {
       setResult();
       drinkAPI(`search.php?s=${generateRandomLetter()}`, setResult, true);
       drinkAPI('list.php?c=list', setFoodCategory);
       setCurrentFood('Bebidas');
+      setHiddenIcon('icon');
     }
   }, [pathname]);
 
