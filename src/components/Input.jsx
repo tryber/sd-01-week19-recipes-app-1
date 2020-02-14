@@ -62,15 +62,15 @@ const InputHeader = () => {
   useEffect(() => {
     if (typeOfSearch === 'search.php?f=' && searchInput.length > 1) {
       return setSearchInput('');
-    }
-    if (typeOfSearch !== '' && searchInput !== '') {
-      if (currentFood === 'Comidas') {
-        mealAPI(`${typeOfSearch}${searchInput}`, setResult);
-      } else {
-        drinkAPI(`${typeOfSearch}${searchInput}`, setResult);
+    } else {
+      if (typeOfSearch !== '' && searchInput !== '') {
+        if (currentFood === 'Comidas') {
+          mealAPI(`${typeOfSearch}${searchInput}`, setResult);
+        } else {
+          drinkAPI(`${typeOfSearch}${searchInput}`, setResult);
+        }
       }
     }
-    return '';
   }, [searchInput, typeOfSearch]);
 
   if (!isShowInput) return <div />;
