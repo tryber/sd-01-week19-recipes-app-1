@@ -15,20 +15,21 @@ function FoodPage({ location: { pathname } }) {
     setResult,
     setFoodCategory,
     foodCategory,
-    currentFood,
+    setCurrentFood,
     isShowInput,
   } = useContext(context);
 
   useEffect(() => {
-    document.title = currentFood;
     if (pathname === '/receitas/comidas') {
       setResult();
       mealAPI(`search.php?s=${generateRandomLetter()}`, setResult, true);
       mealAPI('list.php?c=list', setFoodCategory);
+      setCurrentFood('Comidas');
     } else {
       setResult();
       drinkAPI(`search.php?s=${generateRandomLetter()}`, setResult, true);
       drinkAPI('list.php?c=list', setFoodCategory);
+      setCurrentFood('Bebidas');
     }
   }, [pathname]);
 
