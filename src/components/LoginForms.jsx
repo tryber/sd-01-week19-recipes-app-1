@@ -5,13 +5,14 @@ const LoginForms = () => {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
 
-  const { setDisabled } = useContext(context);
+  const { setDisabled, setEmail } = useContext(context);
 
   useEffect(() => {
     const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
     if (userPassword.length >= 6 && emailRegex.test(userEmail)) {
       setDisabled(false);
     } else {
+      setEmail(userEmail);
       setDisabled(true);
     }
   }, [userEmail, userPassword]);
