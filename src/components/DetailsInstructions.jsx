@@ -1,7 +1,7 @@
 import React from 'react';
-import '../styles/InstructionsDetails.css';
+import '../styles/DetailsInstructions.css';
 
-function InstructionsDetails() {
+function DetailsInstructions() {
   const data = JSON.parse(localStorage.foodData);
 
   return (
@@ -12,4 +12,4 @@ function InstructionsDetails() {
   );
 }
 
-export default InstructionsDetails;
+export default DetailsInstructions;

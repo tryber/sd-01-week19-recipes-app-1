@@ -5,12 +5,22 @@ export const mealAPI = (value = '', action, param) =>
   fetch(`${linkMeatAPI}${value}`)
     .then((response) => response.json())
     .then((data) =>
-      (param ? action({ meals: data.meals.slice(0, 12) }) : action(data)),
+      param ? action({ meals: data.meals.slice(0, 12) }) : action(data),
     );
 
 export const drinkAPI = (value = '', action, param) =>
   fetch(`${linkDrinkAPI}${value}`)
     .then((response) => response.json())
     .then((data) =>
-      (param ? action({ drinks: data.drinks.slice(0, 12) }) : action(data)),
+      param ? action({ drinks: data.drinks.slice(0, 12) }) : action(data),
     );
+
+export const mealLocalStorageAPI = (value = '', action, param) =>
+  fetch(`${linkMeatAPI}${value}`)
+    .then((response) => response.json())
+    .then((data) => localStorage.setItem('foodData', data));
+
+export const drinkLocalStorageAPI = (value = '', action, param) =>
+  fetch(`${linkDrinkAPI}${value}`)
+    .then((response) => response.json())
+    .then((data) => localStorage.setItem('foodData', data));
