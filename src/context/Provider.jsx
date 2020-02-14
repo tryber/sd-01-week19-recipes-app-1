@@ -12,7 +12,6 @@ const Provider = ({ children }) => {
   const [searchInput, setSearchInput] = useState('');
   const [isShowInput, setIsShowInput] = useState(false);
   const [empty, setEmpty] = useState();
-  const [hiddenIcon, setHiddenIcon] = useState('');
 
   const storeContext = {
     disabled,
@@ -33,8 +32,6 @@ const Provider = ({ children }) => {
     setEmail,
     setEmpty,
     empty,
-    hiddenIcon,
-    setHiddenIcon,
   };
 
   return <context.Provider value={storeContext}>{children}</context.Provider>;

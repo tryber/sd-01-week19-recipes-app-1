@@ -3,24 +3,23 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ProfileLogout from './ProfileLogout';
 import Footer from './Footer';
-import Header from './Header';
+import HeaderProfile from './HeaderProfile';
 import context from '../context/context';
 import '../styles/ProfilePage.css';
 
 const ProfilePage = ({ location: { pathname } }) => {
   const userEmail = JSON.parse(localStorage.getItem('user'));
-  const { setCurrentFood, setHiddenIcon } = useContext(context);
+  const { setCurrentFood } = useContext(context);
 
   useEffect(() => {
     if (pathname === '/perfil') {
       setCurrentFood('Perfil');
-      setHiddenIcon('icon_searc');
     }
   }, [pathname]);
 
   return (
     <div>
-      <Header />
+      <HeaderProfile />
       <div className="every-elements">
         <p data-testid="profile-email">{userEmail.email}</p>
         <Link to="/receitas-feitas">
