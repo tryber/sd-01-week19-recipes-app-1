@@ -20,11 +20,11 @@ function drinkHeader(data) {
   return (
     <div>
       <img src={strDrinkThumb} alt={strDrink} className="image-details" />
-      <div>
-        <p>{strDrink}</p>
+      <div className="details-name-share-container">
+        <p className="details-name">{strDrink}</p>
         <div>Share/Favorite</div>
       </div>
-      <p>{strCategory}</p>
+      <p className="details-category">{strCategory}</p>
     </div>
   );
 }

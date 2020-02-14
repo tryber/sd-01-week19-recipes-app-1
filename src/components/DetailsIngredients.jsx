@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/DetailsIngredients.css';
 
 function generateIngredients(data) {
   let index = 1;
@@ -10,9 +11,9 @@ function generateIngredients(data) {
     index += 1;
   }
   return (
-    <div>
+    <div className="ingredients-container">
       {array.map((ingredient) => (
-        <p>{ingredient}</p>
+        <p classNama="ingredient">{ingredient}</p>
       ))}
     </div>
   );
@@ -20,7 +21,12 @@ function generateIngredients(data) {
 
 function DetailsIngredients() {
   const data = JSON.parse(localStorage.foodData);
-  return <div>{generateIngredients(data)}</div>;
+  return (
+    <div>
+      <div className="ingredients-title">Ingredients</div>
+      {generateIngredients(data)}
+    </div>
+  );
 }
 
 export default DetailsIngredients;

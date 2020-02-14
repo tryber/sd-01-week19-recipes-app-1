@@ -1,0 +1,29 @@
+.ingredients-title {
+  align-items: flex-end;
+  display: flex;
+  font-family: Roboto;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: normal;
+  height: 30px;
+  letter-spacing: 0.03em;
+  line-height: 30px;
+  margin-left: 0.4em;
+  width: 138px;
+}
+.ingredients-container {
+  background: #ECECEC;
+  border-radius: 4px;
+  margin: 0 auto;
+  width: 350px;
+}
+.ingredient {
+  align-items: flex-end;
+  color: #000000;
+  display: flex;
+  font-family: Roboto;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 25px;
+}
