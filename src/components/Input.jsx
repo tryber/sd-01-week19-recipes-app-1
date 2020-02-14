@@ -66,9 +66,10 @@ const InputHeader = () => {
     }
     if (typeOfSearch !== '' && searchInput !== '') {
       if (currentFood === 'Comidas') {
-        return mealAPI(`${typeOfSearch}${searchInput}`, setResult);
+        mealAPI(`${typeOfSearch}${searchInput}`, setResult);
+      } else {
+        drinkAPI(`${typeOfSearch}${searchInput}`, setResult);
       }
-      return drinkAPI(`${typeOfSearch}${searchInput}`, setResult);
     }
     return setEmpty('');
   }, [searchInput, typeOfSearch]);
