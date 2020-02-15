@@ -1,9 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import context from '../context/context';
 
-const LoginForms = () => {
-  const { setUserEmail, setUserPassword } = useContext(context);
-
+function createForms(setUserEmail, setUserPassword) {
   return (
     <div className="form">
       <input
@@ -23,6 +21,23 @@ const LoginForms = () => {
       />
     </div>
   );
+}
+
+const LoginForms = () => {
+  const [userEmail, setUserEmail] = useState('');
+  const [userPassword, setUserPassword] = useState('');
+  const { setDisabled, setEmail } = useContext(context);
+  useEffect(() => {
+    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    if (userPassword.length >= 6 && emailRegex.test(userEmail)) {
+      setDisabled(false);
+    } else {
+      setEmail(userEmail);
+      setDisabled(true);
+    }
+  }, [userEmail, userPassword]);
+
+  return createForms(setUserEmail, setUserPassword);
 };
 
 export default LoginForms;
