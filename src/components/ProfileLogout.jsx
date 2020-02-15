@@ -6,7 +6,7 @@ const ProfileLogout = () => (
     <button
       className="button"
       data-testid="profile-logout-btn"
-      onClick={() => localStorage.removeItem('user')}
+      onClick={() => localStorage.clear()}
     >
       Sair
     </button>
