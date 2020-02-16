@@ -6,7 +6,6 @@ import context from '../context/context';
 import { mealAPI, drinkAPI } from '../services/foodAPI';
 import '../styles/ingredientsExploreScreen.css';
 
-
 const IngredientsExploreScreen = () => {
   const { ingredient, setIngredient, currentFood } = useContext(context);
   useEffect(() => {

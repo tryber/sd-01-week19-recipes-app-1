@@ -1,7 +1,6 @@
 import React from 'react';
 
 const IngredientsFromAPI = ({ ingredient, currentFood }) => {
-  console.log(ingredient)
   return ingredient.meals.map((unity) => {
     let ingredientName = unity.strIngredient1;
     let ingredientImage = `https://www.thecocktaildb.com/images/ingredients/${ingredientName}.png`;
