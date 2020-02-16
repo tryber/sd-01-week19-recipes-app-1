@@ -4,6 +4,7 @@ import findData from '../services/findData';
 
 function mealHeader(data) {
   const { strMealThumb, strMeal, strCategory } = data;
+  console.log(strMealThumb);
   return (
     <div>
       <img src={strMealThumb} alt={strMeal} className="image-details" />
@@ -31,11 +32,11 @@ function drinkHeader(data) {
 }
 
 function DetailsHeader() {
-  const data = JSON.parse(localStorage.foodData);
+  const data = findData(JSON.parse(localStorage.foodData));
   if (data.idMeal) {
-    return mealHeader(findData(data));
+    return mealHeader(data);
   }
-  return drinkHeader(findData(data));
+  return drinkHeader(data);
 }
 
 export default DetailsHeader;
