@@ -6,14 +6,15 @@ import context from '../context/context';
 import { mealAPI, drinkAPI } from '../services/foodAPI';
 import '../styles/ingredientsExploreScreen.css';
 
-const IngredientsExploreScreen = () => {
-  const { ingredient, setIngredient, currentFood } = useContext(context);
+const IngredientsExploreScreen = ({match}) => {
+  const { ingredient, setIngredient } = useContext(context);
   useEffect(() => {
-    if (currentFood ==='Comidas') {
-      return mealAPI('list.php?i=list', setIngredient)
+    if (match.url.includes('comidas')) {
+      return mealAPI('list.php?i=list', setIngredient);
     }
-    drinkAPI('list.php?i=list', setIngredient)
+    return drinkAPI('list.php?i=list', setIngredient);
   }, []);
+
   if (!ingredient) {
     return <div>Loading...</div>
   }
@@ -22,7 +23,7 @@ const IngredientsExploreScreen = () => {
       <Header />
       <IngredientsFromAPI
         ingredient={ingredient}
-        currentFood={currentFood}
+        currentFood={match.url}
       />
       <div className="Explore_Ingredients-footer">
         <Footer />

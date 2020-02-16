@@ -2,25 +2,26 @@ import React from 'react';
 
 const IngredientsFromAPI = ({ ingredient, currentFood }) => {
   return ingredient.meals.map((unity) => {
-    let ingredientName = unity.strIngredient1;
+    let ingredientName = 'strIngredient1';
+    console.log(ingredientName);
     let ingredientImage = `https://www.thecocktaildb.com/images/ingredients/${ingredientName}.png`;
-    if (currentFood === 'Comidas') {
-      ingredientName = unity.strIngredient;
+    if (currentFood.includes('comidas')) {
+      ingredientName = 'strIngredient';
       ingredientImage = `https://www.themealdb.com/images/ingredients/${ingredientName}.png`;
     }
     return (
       <div>
         <div>
           <img
-            alt={`${ingredientName} icon`}
+            alt={`${unity.ingredientName} icon`}
             src={ingredientImage}
-            data-testid={`${ingredientName}-card-img`}
+            data-testid={`${unity.ingredientName}-card-img`}
           />
         </div>
         <div>
           <p>Ingredient</p>
-          <p data-testid={`${ingredientName}-card-name`}>
-            {ingredientName}
+          <p data-testid={`${unity.ingredientName}-card-name`}>
+            {unity.ingredientName}
           </p>
         </div>
       </div >
