@@ -8,6 +8,7 @@ import Header from './Header';
 import { mealAPI, drinkAPI } from '../services/foodAPI';
 import generateRandomLetter from '../services/randomLetter';
 import '../styles/FoodPage.css';
+import Loading from './Loading';
 
 function FoodPage({ location: { pathname } }) {
   const {
@@ -56,7 +57,7 @@ function FoodPage({ location: { pathname } }) {
       </div>
     );
   }
-  return <div>Loading...</div>;
+  return <Loading />;
 }
 
 FoodPage.propTypes = {

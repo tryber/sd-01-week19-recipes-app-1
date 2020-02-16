@@ -11,6 +11,7 @@ import DetailsHeader from './DetailsHeader';
 import DetailsIngredients from './DetailsIngredients';
 import DetailsInstructions from './DetailsInstructions';
 import DetailsVideo from './DetailsVideo';
+import Loading from './Loading';
 import FoodList from './FoodList';
 import '../styles/DetailsIngredients.css';
 
@@ -58,7 +59,7 @@ function DetailsPage({ match }) {
       </div>
     );
   }
-  return 'Loading...';
+  return <Loading />;
 }
 
 DetailsPage.propTypes = {
