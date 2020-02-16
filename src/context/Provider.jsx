@@ -10,6 +10,7 @@ const Provider = ({ children }) => {
   const [category, setCategory] = useState();
   const [searchInput, setSearchInput] = useState('');
   const [isShowInput, setIsShowInput] = useState(false);
+  const [ingredient, setIngredient] = useState('');
 
   const storeContext = {
     disabled,
@@ -26,6 +27,8 @@ const Provider = ({ children }) => {
     setSearchInput,
     isShowInput,
     setIsShowInput,
+    ingredient,
+    setIngredient,
   };
 
   return <context.Provider value={storeContext}>{children}</context.Provider>;

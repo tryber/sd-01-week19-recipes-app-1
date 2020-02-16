@@ -8,7 +8,9 @@ const IngredientsExploreScreen = () => (
   <div className="Explore_Ingredients-father">
     <Header />
     <IngredientsFromAPI />
-    <Footer />
+    <div className="Explore_Ingredients-footer">
+      <Footer />
+    </div>
   </div>
 );
 
