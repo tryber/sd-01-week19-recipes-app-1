@@ -1,17 +1,19 @@
 import React from 'react';
 
-const IngredientsFromAPI = ({ ingredients, pathname }) => {
-  ingredients.map((ingredient) => {
-    const ingredientName = ingredient.strIngredient1;
+const IngredientsFromAPI = ({ ingredient, currentFood }) => {
+  console.log(ingredient)
+  return ingredient.meals.map((unity) => {
+    let ingredientName = unity.strIngredient1;
     let ingredientImage = `https://www.thecocktaildb.com/images/ingredients/${ingredientName}.png`;
-    if (pathname.includes('comidas')) {
-      const ingredientName = ingredient.strIngredient;
+    if (currentFood === 'Comidas') {
+      ingredientName = unity.strIngredient;
       ingredientImage = `https://www.themealdb.com/images/ingredients/${ingredientName}.png`;
     }
     return (
       <div>
         <div>
           <img
+            alt={`${ingredientName} icon`}
             src={ingredientImage}
             data-testid={`${ingredientName}-card-img`}
           />
