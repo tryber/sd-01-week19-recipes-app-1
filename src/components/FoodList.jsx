@@ -22,7 +22,6 @@ function generateFoodsList(result, pathname) {
 function FoodList({ result, pathname = '' }) {
   const { recommendeds } = useContext(context);
   result = result ? result : recommendeds;
-  console.log(result);
   if (result.meals) {
     return (
       <div className={pathname === '' ? 'food-recommendeds' : 'food-list'}>

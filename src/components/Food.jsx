@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import context from '../context/context';
 import { Link } from 'react-router-dom';
@@ -8,12 +8,12 @@ function saveFood(data) {
   localStorage.setItem('foodData', JSON.stringify(data));
 }
 
-function meal(data, index) {
+function meal(data, index, recommendeds) {
   return (
     <Link
       to={`/receitas/comidas/${data.idMeal}`}
       onClick={() => saveFood(data)}
-      className="food-container"
+      className={recommendeds ? 'recommendeds-child' : 'food-container'}
     >
       <div>
         <img
@@ -33,12 +33,12 @@ function meal(data, index) {
   );
 }
 
-function drink(data, index) {
+function drink(data, index, recommendeds) {
   return (
     <Link
       to={`/receitas/bebidas/${data.idDrink}`}
       onClick={() => saveFood(data)}
-      className="food-container"
+      className={recommendeds ? 'recommendeds-child' : 'food-container'}
     >
       <div>
         <img
@@ -59,16 +59,11 @@ function drink(data, index) {
 }
 
 function Food({ data, index }) {
-  const { setRecommendeds } = useContext(context);
-  // useEffect(() => {
-  //   return () => {
-  //     setRecommendeds();
-  //   };
-  // }, []);
+  const { recommendeds } = useContext(context);
   if (data.idMeal) {
-    return meal(data, index);
+    return meal(data, index, recommendeds);
   }
-  return drink(data, index);
+  return drink(data, index, recommendeds);
 }
 
 Food.propTypes = {

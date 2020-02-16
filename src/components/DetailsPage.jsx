@@ -16,7 +16,6 @@ import '../styles/DetailsIngredients.css';
 function DetailsPage({ match }) {
   const { setRecommendeds, recommendeds, setEmpty } = useContext(context);
   useEffect(() => {
-    console.log('uaihdiusah')
     if (match.path.includes('comidas')) {
       mealLocalStorageAPI(`lookup.php?i=${match.params.id}`);
       drinkRecommendedsAPI('search.php?f=b', setRecommendeds);
@@ -35,6 +34,12 @@ function DetailsPage({ match }) {
       mealRecommendedsAPI('search.php?f=b', setRecommendeds);
     }
   }, [match.path]);
+
+  useEffect(() => {
+    return () => {
+      setRecommendeds();
+    };
+  }, []);
   const data = localStorage.foodData;
   if (data && recommendeds) {
     return (
