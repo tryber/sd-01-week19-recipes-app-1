@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import LoginPage from './components/LoginPage';
 import ProfilePage from './components/ProfilePage';
 import FoodPage from './components/FoodPage';
+import DetailsPage from './components/DetailsPage';
 
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
         <Route path="/perfil" component={ProfilePage} />
         <Route exact path="/receitas/comidas" component={FoodPage} />
         <Route exact path="/receitas/bebidas" component={FoodPage} />
+        <Route path="/receitas/comidas/:id" component={DetailsPage} />
+        <Route path="/receitas/bebidas/:id" component={DetailsPage} />
       </Switch>
     </BrowserRouter>
   );
