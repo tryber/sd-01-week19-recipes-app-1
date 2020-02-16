@@ -20,7 +20,12 @@ function generateIngredients(data) {
 }
 
 function DetailsIngredients() {
-  const data = JSON.parse(localStorage.foodData);
+  let data = JSON.parse(localStorage.foodData);
+  if (data.meals) {
+    data = data.meals[0];
+  } else {
+    data = data.drinks[0];
+  }
   return (
     <div>
       <div className="ingredients-title">Ingredients</div>

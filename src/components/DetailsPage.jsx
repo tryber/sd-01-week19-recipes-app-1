@@ -13,14 +13,16 @@ import DetailsVideo from './DetailsVideo';
 import FoodList from './FoodList';
 
 function DetailsPage({ match }) {
-  const { setRecommendeds, recommendeds } = useContext(context);
+  const { setRecommendeds, recommendeds, setEmpty } = useContext(context);
   useEffect(() => {
     if (match.path === '/receitas/comidas/:id') {
       mealLocalStorageAPI(`lookup.php?i=${match.params.id}`);
       mealAPI('search.php?f=b', setRecommendeds);
+    } else {
+      drinkLocalStorageAPI(`lookup.php?i=${match.params.id}`);
+      drinkAPI('search.php?f=b', setRecommendeds);
     }
-    drinkLocalStorageAPI(`lookup.php?i=${match.params.id}`);
-    drinkAPI('search.php?f=b', setRecommendeds);
+    setEmpty();
   }, []);
   const data = localStorage.foodData;
   if (data && recommendeds) {

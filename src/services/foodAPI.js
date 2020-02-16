@@ -15,12 +15,12 @@ export const drinkAPI = (value = '', action, param) =>
       param ? action({ drinks: data.drinks.slice(0, 12) }) : action(data),
     );
 
-export const mealLocalStorageAPI = (value = '', action, param) =>
+export const mealLocalStorageAPI = (value = '') =>
   fetch(`${linkMeatAPI}${value}`)
     .then((response) => response.json())
-    .then((data) => localStorage.setItem('foodData', data));
+    .then((data) => localStorage.setItem('foodData', JSON.stringify(data)));
 
-export const drinkLocalStorageAPI = (value = '', action, param) =>
+export const drinkLocalStorageAPI = (value = '') =>
   fetch(`${linkDrinkAPI}${value}`)
     .then((response) => response.json())
-    .then((data) => localStorage.setItem('foodData', data));
+    .then((data) => localStorage.setItem('foodData', JSON.stringify(data)));
