@@ -12,7 +12,9 @@ const Header = () => {
   return (
     <div>
       <div className="Header_separating-icons">
-        <Link to="/profile"><img src={IconProfile} alt="Icon Profiler" /></Link>
+        <Link to="/profile">
+          <img src={IconProfile} alt="Icon Profiler" />
+        </Link>
         <h1>{currentFood}</h1>
         <input
           type="image"

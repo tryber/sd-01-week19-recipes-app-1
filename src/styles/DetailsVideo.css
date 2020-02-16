@@ -1,21 +1,20 @@
 .video-details {
-	background: #ECECEC;
-	border-radius: 4px;
-	height: 180px;
-    margin-left: 0.5em;
-	width: 95%;
+  background: #ECECEC;
+  border-radius: 4px;
+  height: 180px;
+  margin-left: 0.5em;
+  width: 95%;
 }
-
 .video-title {
-    align-items: flex-end;
-    display: flex;
-    font-family: Roboto;
-    font-size: 26px;
-    font-style: normal;
-    font-weight: normal;
-    height: 30px;
-    letter-spacing: 0.03em;
-    line-height: 30px;
-    margin-bottom: 0;
-    width: 138px;
-  }
+  align-items: flex-end;
+  display: flex;
+  font-family: Roboto;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: normal;
+  height: 30px;
+  letter-spacing: 0.03em;
+  line-height: 30px;
+  margin-bottom: 0;
+  width: 138px;
+}
