@@ -37,10 +37,11 @@ function DetailsPage({ match }) {
   }, [match.path]);
 
   useEffect(() => {
+    setEmpty();
     return () => {
       setRecommendeds();
       setEmpty();
-    }
+    };
   }, []);
   const data = localStorage.foodData;
   if (data && recommendeds) {

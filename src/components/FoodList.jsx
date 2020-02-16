@@ -22,11 +22,11 @@ function generateFoodsList(result, pathname) {
 function FoodList({ result, pathname = '' }) {
   const { recommendeds } = useContext(context);
   const newResult = result || recommendeds;
-    return (
-      <div className={pathname === '' ? 'food-recommendeds' : 'food-list'}>
-        {generateFoodsList((newResult.meals || newResult.drinks), pathname)}
-      </div>
-    );
+  return (
+    <div className={pathname === '' ? 'food-recommendeds' : 'food-list'}>
+      {generateFoodsList(newResult.meals || newResult.drinks, pathname)}
+    </div>
+  );
 }
 
 FoodList.propTypes = {
