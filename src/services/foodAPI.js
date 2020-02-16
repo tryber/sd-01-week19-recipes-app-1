@@ -24,3 +24,13 @@ export const drinkLocalStorageAPI = (value = '') =>
   fetch(`${linkDrinkAPI}${value}`)
     .then((response) => response.json())
     .then((data) => localStorage.setItem('foodData', JSON.stringify(data)));
+
+export const mealRecommendedsAPI = (value = '', action) =>
+  fetch(`${linkMeatAPI}${value}`)
+    .then((response) => response.json())
+    .then((data) => action({ meals: data.meals.slice(0, 6) }));
+
+export const drinkRecommendedsAPI = (value = '', action) =>
+  fetch(`${linkDrinkAPI}${value}`)
+    .then((response) => response.json())
+    .then((data) => action({ drinks: data.drinks.slice(0, 6) }));

@@ -30,10 +30,11 @@ function drinkHeader(data) {
 }
 function DetailsHeader() {
   const data = JSON.parse(localStorage.foodData);
+  console.log(data);
   if (data.meals) {
-    return mealHeader(data.meals[0]);
+    return mealHeader(data.meals[0] || data);
   }
-  return drinkHeader(data.drinks[0]);
+  return drinkHeader(data.drinks[0] || data);
 }
 
 export default DetailsHeader;

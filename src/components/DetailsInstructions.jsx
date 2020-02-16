@@ -4,9 +4,9 @@ import '../styles/DetailsInstructions.css';
 function DetailsInstructions() {
   let data = JSON.parse(localStorage.foodData);
   if (data.meals) {
-    data = data.meals[0];
+    data = data.meals[0] || data.meals;
   } else {
-    data = data.drinks[0];
+    data = data.drinks[0] || data.drinks;
   }
   return (
     <div>

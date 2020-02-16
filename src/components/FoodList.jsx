@@ -11,22 +11,23 @@ function generateFoodsList(result, pathname) {
     <Food
       index={index}
       pathname={pathname}
-      key={`${food.strSource} ${(index * 3)}`}
+      key={`${food.strSource} ${index * 3}`}
       data={food}
     />
   ));
 }
 
 function FoodList({ result, pathname = '' }) {
+  console.log(result);
   if (result.meals) {
     return (
-      <div className="food-list">
+      <div className={pathname === '' ? 'food-recommendeds' : 'food-list'}>
         {generateFoodsList(result.meals, pathname)}
       </div>
     );
   }
   return (
-    <div className="food-list">
+    <div className={pathname === '' ? 'food-recommendeds' : 'food-list'}>
       {generateFoodsList(result.drinks, pathname)}
     </div>
   );

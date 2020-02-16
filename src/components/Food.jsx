@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
+import context from '../context/context';
 import { Link } from 'react-router-dom';
 import '../styles/Food.css';
 
@@ -58,6 +59,12 @@ function drink(data, index) {
 }
 
 function Food({ data, index }) {
+  const { setRecommendeds } = useContext(context);
+  useEffect(() => {
+    return () => {
+      setRecommendeds();
+    };
+  }, []);
   if (data.idMeal) {
     return meal(data, index);
   }

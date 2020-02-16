@@ -3,24 +3,25 @@ import context from '../context/context';
 import {
   mealLocalStorageAPI,
   drinkLocalStorageAPI,
-  mealAPI,
-  drinkAPI,
+  mealRecommendedsAPI,
+  drinkRecommendedsAPI,
 } from '../services/foodAPI';
 import DetailsHeader from './DetailsHeader';
 import DetailsIngredients from './DetailsIngredients';
 import DetailsInstructions from './DetailsInstructions';
 import DetailsVideo from './DetailsVideo';
 import FoodList from './FoodList';
+import '../styles/DetailsIngredients.css';
 
 function DetailsPage({ match }) {
   const { setRecommendeds, recommendeds, setEmpty } = useContext(context);
   useEffect(() => {
     if (match.path === '/receitas/comidas/:id') {
       mealLocalStorageAPI(`lookup.php?i=${match.params.id}`);
-      mealAPI('search.php?f=b', setRecommendeds);
+      drinkRecommendedsAPI('search.php?f=b', setRecommendeds);
     } else {
       drinkLocalStorageAPI(`lookup.php?i=${match.params.id}`);
-      drinkAPI('search.php?f=b', setRecommendeds);
+      mealRecommendedsAPI('search.php?f=b', setRecommendeds);
     }
     setEmpty();
   }, []);
@@ -32,7 +33,10 @@ function DetailsPage({ match }) {
         <DetailsIngredients />
         <DetailsInstructions />
         <DetailsVideo />
-        {/* <FoodList result={recommendeds} /> */}
+        <div>
+          <p className="ingredients-title">Recomendadas</p>
+          <FoodList result={recommendeds} />
+        </div>
       </div>
     );
   }
