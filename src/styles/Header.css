@@ -6,3 +6,7 @@
   position: fixed;
   width: 100%;
 }
+
+.icon_search {
+  visibility: hidden;
+}

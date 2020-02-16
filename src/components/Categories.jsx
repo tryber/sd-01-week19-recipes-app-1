@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 import context from '../context/context';
 import { mealAPI, drinkAPI } from '../services/foodAPI';
 import generateRandomLetter from '../services/randomLetter';
-import './Categories.css';
+import '../styles/Categories.css';
 
 function updateAPI(category, setResult, api) {
   api(`filter.php?c=${category}`, setResult);
@@ -24,7 +23,13 @@ function buttonAll(setResult, api) {
   );
 }
 
-function generateCategories(categories, setResult, api, previousCategory, setCategory) {
+function generateCategories(
+  categories,
+  setResult,
+  api,
+  previousCategory,
+  setCategory,
+) {
   return (
     <div className="category-container">
       {buttonAll(setResult, api)}
@@ -37,7 +42,13 @@ function generateCategories(categories, setResult, api, previousCategory, setCat
             data-testid={`${strCategory}-category-filter`}
             type="button"
             onClick={() =>
-              updateAPI(strCategory, setResult, api, previousCategory, setCategory)
+              updateAPI(
+                strCategory,
+                setResult,
+                api,
+                previousCategory,
+                setCategory,
+              )
             }
           >
             {strCategory}
@@ -48,11 +59,11 @@ function generateCategories(categories, setResult, api, previousCategory, setCat
   );
 }
 
-function Categories({ pathname }) {
+function Categories() {
   const { foodCategory, setResult, category, setCategory } = useContext(
     context,
   );
-  if (pathname === '/receitas/comidas') {
+  if (foodCategory.meals) {
     return (
       <div>
         {generateCategories(
@@ -77,9 +88,5 @@ function Categories({ pathname }) {
     </div>
   );
 }
-
-Categories.propTypes = {
-  pathname: PropTypes.string.isRequired,
-};
 
 export default Categories;
