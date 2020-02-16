@@ -68,6 +68,5 @@
   margin: 0.3em;
   overflow: hidden;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
   width: 100%;
 }

@@ -1,17 +1,11 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 import '../styles/DetailsVideo.css';
-
-function identifyData(data) {
-  if (data.meals || data.idMeal) {
-    return data.meals ? data.meals[0] : data;
-  }
-  return data.drinks ? data.drinks[0] : data;
-}
+import findData from '../services/findData';
 
 function DetailsVideo() {
   const firstData = JSON.parse(localStorage.foodData);
-  const data = identifyData(firstData);
+  const data = findData(firstData);
   if (data.strYoutube) {
     const id = data.strYoutube.split('=')[1];
     return (

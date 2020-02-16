@@ -1,12 +1,6 @@
 import React from 'react';
 import '../styles/DetailsInstructions.css';
-
-function identifyData(data) {
-  if (data.meals || data.idMeal) {
-    return data.meals ? data.meals[0] : data;
-  }
-  return data.drinks ? data.drinks[0] : data;
-}
+import findData from '../services/findData';
 
 function DetailsInstructions() {
   const data = JSON.parse(localStorage.foodData);
@@ -14,7 +8,7 @@ function DetailsInstructions() {
     <div>
       <p className="instructions-title">Instructions</p>
       <div className="instructions-details">
-        {identifyData(data).strInstructions}
+        {findData(data).strInstructions}
       </div>
     </div>
   );

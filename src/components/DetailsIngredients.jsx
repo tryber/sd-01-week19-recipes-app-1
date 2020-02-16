@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/DetailsIngredients.css';
+import findData from '../services/findData';
 
 function generateIngredients(data) {
   let index = 1;
@@ -19,19 +20,12 @@ function generateIngredients(data) {
   );
 }
 
-function identifyData(data) {
-  if (data.meals || data.idMeal) {
-    return data.meals ? data.meals[0] : data;
-  }
-  return data.drinks ? data.drinks[0] : data;
-}
-
 function DetailsIngredients() {
   const data = JSON.parse(localStorage.foodData);
   return (
     <div>
       <div className="ingredients-title">Ingredients</div>
-      {generateIngredients(identifyData(data))}
+      {generateIngredients(findData(data))}
     </div>
   );
 }

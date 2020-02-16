@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/DetailsHeader.css';
+import findData from '../services/findData';
 
 function mealHeader(data) {
   const { strMealThumb, strMeal, strCategory } = data;
@@ -29,19 +30,12 @@ function drinkHeader(data) {
   );
 }
 
-function identifyData(data) {
-  if (data.meals || data.idMeal) {
-    return data.meals ? data.meals[0] : data;
-  }
-  return data.drinks ? data.drinks[0] : data;
-}
-
 function DetailsHeader() {
   const data = JSON.parse(localStorage.foodData);
   if (data.idMeal) {
-    return mealHeader(identifyData(data));
+    return mealHeader(findData(data));
   }
-  return drinkHeader(identifyData(data));
+  return drinkHeader(findData(data));
 }
 
 export default DetailsHeader;
