@@ -3,10 +3,10 @@ import React from 'react';
 const IngredientsFromAPI = ({ ingredients, pathname }) => {
   ingredients.map((ingredient) => {
     const ingredientName = ingredient.strIngredient1;
-    const ingredientImage = `https://www.thecocktaildb.com/images/ingredients/${ingredientName}.png`;
+    let ingredientImage = `https://www.thecocktaildb.com/images/ingredients/${ingredientName}.png`;
     if (pathname.includes('comidas')) {
       const ingredientName = ingredient.strIngredient;
-      const ingredientImage = `https://www.themealdb.com/images/ingredients/${ingredientName}.png`;
+      ingredientImage = `https://www.themealdb.com/images/ingredients/${ingredientName}.png`;
     }
     return (
       <div>
@@ -15,12 +15,14 @@ const IngredientsFromAPI = ({ ingredients, pathname }) => {
             src={ingredientImage}
             data-testid={`${ingredientName}-card-img`}
           />
-          <div>
-            <p>Ingredient</p>
-            <p>{ingredientName}</p>
-          </div>
         </div>
-      </div>
+        <div>
+          <p>Ingredient</p>
+          <p data-testid={`${ingredientName}-card-name`}>
+            {ingredientName}
+          </p>
+        </div>
+      </div >
     );
   });
 }
