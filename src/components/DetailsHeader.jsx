@@ -28,17 +28,20 @@ function drinkHeader(data) {
     </div>
   );
 }
+
+function identifyData(data) {
+  if (data.meals || data.idMeal) {
+    return data.meals ? data.meals[0] : data;
+  }
+  return data.drinks ? data.drinks[0] : data;
+}
+
 function DetailsHeader() {
   let data = JSON.parse(localStorage.foodData);
-  if (data.meals || data.idMeal) {
-    data = data.meals ? data.meals[0] : data;
-  } else {
-    data = data.drinks ? data.drinks[0] : data;
-  }
   if (data.idMeal) {
-    return mealHeader(data);
+    return mealHeader(identifyData(data));
   }
-  return drinkHeader(data);
+  return drinkHeader(identifyData(data));
 }
 
 export default DetailsHeader;

@@ -62,15 +62,12 @@
 }
 
 .food-recommendeds {
-  -webkit-overflow-scrolling: touch;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-flow: row nowrap;
   justify-content: space-between;
   margin: 0.3em;
   overflow: hidden;
   overflow-x: auto;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  width: infinite;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
 }

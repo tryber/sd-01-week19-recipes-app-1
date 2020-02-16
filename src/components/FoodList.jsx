@@ -21,17 +21,17 @@ function generateFoodsList(result, pathname) {
 
 function FoodList({ result, pathname = '' }) {
   const { recommendeds } = useContext(context);
-  result = result ? result : recommendeds;
+  let newResult = result ? result : recommendeds;
   if (result.meals) {
     return (
       <div className={pathname === '' ? 'food-recommendeds' : 'food-list'}>
-        {generateFoodsList(result.meals, pathname)}
+        {generateFoodsList(newResult.meals, pathname)}
       </div>
     );
   }
   return (
     <div className={pathname === '' ? 'food-recommendeds' : 'food-list'}>
-      {generateFoodsList(result.drinks, pathname)}
+      {generateFoodsList(newResult.drinks, pathname)}
     </div>
   );
 }

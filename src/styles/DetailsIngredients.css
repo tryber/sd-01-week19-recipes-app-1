@@ -1,10 +1,8 @@
 .ingredients-title {
   align-items: flex-end;
   display: flex;
-  font-family: Roboto;
   font-size: 26px;
   font-style: normal;
-  font-weight: normal;
   height: 30px;
   letter-spacing: 0.03em;
   line-height: 30px;
@@ -12,7 +10,7 @@
 }
 
 .ingredients-container {
-  background: #ECECEC;
+  background: #ececec;
   border-radius: 4px;
   margin: 0 auto;
   padding: 0.3em;
@@ -21,11 +19,9 @@
 
 .ingredient {
   align-items: flex-end;
-  color: #000000;
+  color: black;
   display: flex;
-  font-family: Roboto;
   font-size: 21px;
   font-style: normal;
-  font-weight: normal;
   line-height: 12px;
 }

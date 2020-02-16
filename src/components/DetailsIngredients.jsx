@@ -19,17 +19,19 @@ function generateIngredients(data) {
   );
 }
 
+function identifyData(data) {
+  if (data.meals || data.idMeal) {
+    return data.meals ? data.meals[0] : data;
+  }
+  return data.drinks ? data.drinks[0] : data;
+}
+
 function DetailsIngredients() {
   let data = JSON.parse(localStorage.foodData);
-  if (data.meals || data.idMeal) {
-    data = data.meals ? data.meals[0] : data;
-  } else {
-    data = data.drinks ? data.drinks[0] : data;
-  }
   return (
     <div>
       <div className="ingredients-title">Ingredients</div>
-      {generateIngredients(data)}
+      {generateIngredients(identifyData(data))}
     </div>
   );
 }
