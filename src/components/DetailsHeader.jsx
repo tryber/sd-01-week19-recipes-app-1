@@ -4,7 +4,6 @@ import findData from '../services/findData';
 
 function mealHeader(data) {
   const { strMealThumb, strMeal, strCategory } = data;
-  console.log(strMealThumb);
   return (
     <div>
       <img src={strMealThumb} alt={strMeal} className="image-details" />
