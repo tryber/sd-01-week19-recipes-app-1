@@ -1,10 +1,11 @@
 import React, { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import context from '../context/context';
 import Header from './Header';
 import Footer from './Footer';
-import '../styles/ExplorePage.css';
+import '../styles/Explore.css';
 
 const ExplorePage = ({ location: { pathname } }) => {
   const { setCurrentFood } = useContext(context);
@@ -23,7 +24,7 @@ const ExplorePage = ({ location: { pathname } }) => {
           <button data-testid="explore-food" className="button">Explorar Comidas</button>
         </Link>
         <Link to="/explorar/bebidas">
-          <button data-testid="explore-drinks" className="button">Explorar Comidas</button>
+          <button data-testid="explore-drinks" className="button">Explorar Bebidas</button>
         </Link>
       </div>
       <div className="explore-footer">
@@ -31,6 +32,12 @@ const ExplorePage = ({ location: { pathname } }) => {
       </div>
     </div>
   );
+};
+
+ExplorePage.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default ExplorePage;
