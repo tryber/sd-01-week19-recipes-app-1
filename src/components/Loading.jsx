@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Loading.css';
-const Spinner = require('react-spinkit');
 
+const Spinner = require('react-spinkit');
 function Loading() {
   return (
     <div className="center-container">
