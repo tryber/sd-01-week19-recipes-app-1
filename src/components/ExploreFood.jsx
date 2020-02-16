@@ -5,16 +5,16 @@ import PropTypes from 'prop-types';
 import context from '../context/context';
 import Header from './Header';
 import Footer from './Footer';
-import '../styles/Explore.css'
+import '../styles/Explore.css';
 
 const ExploreFood = ({ location: { pathname } }) => {
-  const { 
+  const {
     setCurrentFood,
     enableButton,
     setEnableButton,
     route,
-    setRoute
-  } = useContext(context)
+    setRoute,
+  } = useContext(context);
 
   useEffect(() => {
     if (pathname === '/explorar/comidas') {
@@ -28,7 +28,7 @@ const ExploreFood = ({ location: { pathname } }) => {
     }
   }, [pathname]);
 
-  return(
+  return (
     <div>
       <Header />
       <div className="center-buttons">
@@ -36,9 +36,9 @@ const ExploreFood = ({ location: { pathname } }) => {
           <button data-testid="explore-by-ingredient" className="button">Por ingredientes</button>
         </Link>
         <Link to="/explorar/comidas/area">
-          <button 
-            data-testid="explore-by-area" 
-            className="button" 
+          <button
+            data-testid="explore-by-area"
+            className="button"
             disabled={enableButton}
           >
           Por local de origem
@@ -53,7 +53,7 @@ const ExploreFood = ({ location: { pathname } }) => {
       </div>
     </div>
   );
-}
+};
 
 ExploreFood.propTypes = {
   location: PropTypes.shape({
