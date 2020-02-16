@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Food from './Food';
 import '../styles/Food.css';
+import { useContext } from 'react';
+import context from '../context/context';
 
 function generateFoodsList(result, pathname) {
   if (!result) {
@@ -18,6 +20,8 @@ function generateFoodsList(result, pathname) {
 }
 
 function FoodList({ result, pathname = '' }) {
+  const { recommendeds } = useContext(context);
+  result = result ? result : recommendeds;
   console.log(result);
   if (result.meals) {
     return (

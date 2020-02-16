@@ -60,11 +60,11 @@ function drink(data, index) {
 
 function Food({ data, index }) {
   const { setRecommendeds } = useContext(context);
-  useEffect(() => {
-    return () => {
-      setRecommendeds();
-    };
-  }, []);
+  // useEffect(() => {
+  //   return () => {
+  //     setRecommendeds();
+  //   };
+  // }, []);
   if (data.idMeal) {
     return meal(data, index);
   }

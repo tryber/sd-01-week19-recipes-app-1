@@ -3,10 +3,10 @@ import '../styles/DetailsInstructions.css';
 
 function DetailsInstructions() {
   let data = JSON.parse(localStorage.foodData);
-  if (data.meals) {
-    data = data.meals[0] || data.meals;
+  if (data.meals || data.idMeal) {
+    data = data.meals ? data.meals[0] : data;
   } else {
-    data = data.drinks[0] || data.drinks;
+    data = data.drinks ? data.drinks[0] : data;
   }
   return (
     <div>

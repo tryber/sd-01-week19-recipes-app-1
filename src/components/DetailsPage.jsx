@@ -16,7 +16,8 @@ import '../styles/DetailsIngredients.css';
 function DetailsPage({ match }) {
   const { setRecommendeds, recommendeds, setEmpty } = useContext(context);
   useEffect(() => {
-    if (match.path === '/receitas/comidas/:id') {
+    console.log('uaihdiusah')
+    if (match.path.includes('comidas')) {
       mealLocalStorageAPI(`lookup.php?i=${match.params.id}`);
       drinkRecommendedsAPI('search.php?f=b', setRecommendeds);
     } else {
@@ -25,6 +26,15 @@ function DetailsPage({ match }) {
     }
     setEmpty();
   }, []);
+
+  useEffect(() => {
+    setRecommendeds();
+    if (match.path.includes('comidas')) {
+      drinkRecommendedsAPI('search.php?f=b', setRecommendeds);
+    } else {
+      mealRecommendedsAPI('search.php?f=b', setRecommendeds);
+    }
+  }, [match.path]);
   const data = localStorage.foodData;
   if (data && recommendeds) {
     return (

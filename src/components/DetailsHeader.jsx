@@ -29,12 +29,16 @@ function drinkHeader(data) {
   );
 }
 function DetailsHeader() {
-  const data = JSON.parse(localStorage.foodData);
-  console.log(data);
-  if (data.meals) {
-    return mealHeader(data.meals[0] || data);
+  let data = JSON.parse(localStorage.foodData);
+  if (data.meals || data.idMeal) {
+    data = data.meals ? data.meals[0] : data;
+  } else {
+    data = data.drinks ? data.drinks[0] : data;
   }
-  return drinkHeader(data.drinks[0] || data);
+  if (data.idMeal) {
+    return mealHeader(data);
+  }
+  return drinkHeader(data);
 }
 
 export default DetailsHeader;
