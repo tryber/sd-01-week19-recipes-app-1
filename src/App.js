@@ -6,6 +6,7 @@ import ProfilePage from './components/ProfilePage';
 import FoodPage from './components/FoodPage';
 import ExplorePage from './components/ExplorePage';
 import ExploreFood from './components/ExploreFood';
+import NotFound from './components/NotFound';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/perfil" component={ProfilePage} />
         <Route exact path="/receitas/comidas" component={FoodPage} />
         <Route exact path="/receitas/bebidas" component={FoodPage} />
+        <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
   );
