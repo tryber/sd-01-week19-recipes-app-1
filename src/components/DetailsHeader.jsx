@@ -31,11 +31,11 @@ function drinkHeader(data) {
 }
 
 function DetailsHeader() {
-  const data = JSON.parse(localStorage.foodData);
+  const data = findData(JSON.parse(localStorage.foodData));
   if (data.idMeal) {
-    return mealHeader(findData(data));
+    return mealHeader(data);
   }
-  return drinkHeader(findData(data));
+  return drinkHeader(data);
 }
 
 export default DetailsHeader;

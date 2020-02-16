@@ -14,7 +14,7 @@ function generateIngredients(data) {
   return (
     <div className="ingredients-container">
       {array.map((ingredient) => (
-        <p className="ingredient">{ingredient}</p>
+        <p key={ingredient} className="ingredient">{ingredient}</p>
       ))}
     </div>
   );
