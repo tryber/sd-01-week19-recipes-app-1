@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import context from '../context/context';
-import { Link } from 'react-router-dom';
 import '../styles/Food.css';
 
 function saveFood(data) {

@@ -9,7 +9,7 @@ function identifyData(data) {
 }
 
 function DetailsInstructions() {
-  let data = JSON.parse(localStorage.foodData);
+  const data = JSON.parse(localStorage.foodData);
   return (
     <div>
       <p className="instructions-title">Instructions</p>

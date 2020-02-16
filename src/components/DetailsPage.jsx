@@ -1,4 +1,5 @@
 import React, { useEffect, useContext } from 'react';
+import PropTypes from 'prop-types';
 import context from '../context/context';
 import {
   mealLocalStorageAPI,
@@ -36,9 +37,7 @@ function DetailsPage({ match }) {
   }, [match.path]);
 
   useEffect(() => {
-    return () => {
-      setRecommendeds();
-    };
+    return () => setRecommendeds();
   }, []);
   const data = localStorage.foodData;
   if (data && recommendeds) {
@@ -57,5 +56,11 @@ function DetailsPage({ match }) {
   }
   return 'Loading...';
 }
+
+DetailsPage.propTypes = {
+  match: PropTypes.shape({
+    path: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default DetailsPage;

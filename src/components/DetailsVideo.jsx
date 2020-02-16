@@ -10,7 +10,7 @@ function identifyData(data) {
 }
 
 function DetailsVideo() {
-  let firstData = JSON.parse(localStorage.foodData);
+  const firstData = JSON.parse(localStorage.foodData);
   const data = identifyData(firstData);
   if (data.strYoutube) {
     const id = data.strYoutube.split('=')[1];

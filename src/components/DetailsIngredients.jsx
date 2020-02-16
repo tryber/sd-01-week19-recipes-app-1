@@ -27,7 +27,7 @@ function identifyData(data) {
 }
 
 function DetailsIngredients() {
-  let data = JSON.parse(localStorage.foodData);
+  const data = JSON.parse(localStorage.foodData);
   return (
     <div>
       <div className="ingredients-title">Ingredients</div>

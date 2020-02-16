@@ -1,8 +1,8 @@
 import React from 'react';
+import { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Food from './Food';
 import '../styles/Food.css';
-import { useContext } from 'react';
 import context from '../context/context';
 
 function generateFoodsList(result, pathname) {
@@ -21,7 +21,7 @@ function generateFoodsList(result, pathname) {
 
 function FoodList({ result, pathname = '' }) {
   const { recommendeds } = useContext(context);
-  let newResult = result ? result : recommendeds;
+  let newResult = result || recommendeds;
   if (result.meals) {
     return (
       <div className={pathname === '' ? 'food-recommendeds' : 'food-list'}>

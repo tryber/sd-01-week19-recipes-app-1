@@ -37,7 +37,7 @@ function identifyData(data) {
 }
 
 function DetailsHeader() {
-  let data = JSON.parse(localStorage.foodData);
+  const data = JSON.parse(localStorage.foodData);
   if (data.idMeal) {
     return mealHeader(identifyData(data));
   }
