@@ -5,6 +5,7 @@ import context from '../context/context';
 import Header from './Header';
 import Footer from './Footer';
 import '../styles/ExploreOrigin.css';
+import ExploreDropdown from './ExploreDropdown';
 
 const ExploreOrigin = ({ location: { pathname }}) => {
   const { setCurrentFood } = useContext(context);
@@ -20,7 +21,7 @@ const ExploreOrigin = ({ location: { pathname }}) => {
     <div>
       <Header />
       <div>
-
+        <ExploreDropdown />
       </div>
       <div className="Explore_Origin_container">
         <Footer />
