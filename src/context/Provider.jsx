@@ -13,6 +13,11 @@ const Provider = ({ children }) => {
   const [isShowInput, setIsShowInput] = useState(false);
   const [ingredient, setIngredient] = useState('');
   const [empty, setEmpty] = useState();
+  const [enableButton, setEnableButton] = useState(true);
+  const [route, setRoute] = useState('');
+  const [detailsData, setDetailsData] = useState();
+  const [recommendeds, setRecommendeds] = useState();
+  const [idFood, setIdFood] = useState('');
 
   const storeContext = {
     disabled,
@@ -35,6 +40,16 @@ const Provider = ({ children }) => {
     setEmail,
     setEmpty,
     empty,
+    enableButton,
+    setEnableButton,
+    route,
+    setRoute,
+    detailsData,
+    setDetailsData,
+    recommendeds,
+    setRecommendeds,
+    idFood,
+    setIdFood,
   };
 
   return <context.Provider value={storeContext}>{children}</context.Provider>;

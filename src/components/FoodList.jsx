@@ -1,7 +1,9 @@
 import React from 'react';
+import { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Food from './Food';
 import '../styles/Food.css';
+import context from '../context/context';
 
 function generateFoodsList(result, pathname) {
   if (!result) {
@@ -11,23 +13,18 @@ function generateFoodsList(result, pathname) {
     <Food
       index={index}
       pathname={pathname}
-      key={`${food.strSource} ${(index * 3)}`}
+      key={`${food.strSource} ${index * 3}`}
       data={food}
     />
   ));
 }
 
-function FoodList({ result, pathname }) {
-  if (result.meals) {
-    return (
-      <div className="food-list">
-        {generateFoodsList(result.meals, pathname)}
-      </div>
-    );
-  }
+function FoodList({ result, pathname = '' }) {
+  const { recommendeds } = useContext(context);
+  const newResult = result || recommendeds;
   return (
-    <div className="food-list">
-      {generateFoodsList(result.drinks, pathname)}
+    <div className={pathname === '' ? 'food-recommendeds' : 'food-list'}>
+      {generateFoodsList(newResult.meals || newResult.drinks, pathname)}
     </div>
   );
 }
