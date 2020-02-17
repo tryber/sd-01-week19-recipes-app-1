@@ -38,7 +38,7 @@ const ExploreFood = ({ location: { pathname } }) => {
   return (
     <div>
       <Header />
-      <div className="center-buttons">
+      <div className="Explore_Page_buttons">
         <Link to={route}>
           <button
             data-testid="explore-by-ingredient"
