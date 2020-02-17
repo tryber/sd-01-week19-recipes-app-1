@@ -16,7 +16,7 @@ function App() {
         <Route path="/explorar/bebidas/ingredientes" component={IngredientsExploreScreen} />
         <Route path="/perfil" component={ProfilePage} />
         <Route exact path="/receitas/comidas" component={FoodPage} />
-        <Route exact path="/receitas/bebidas" component={FoodPage} /> 
+        <Route exact path="/receitas/bebidas" component={FoodPage} />
       </Switch>
     </BrowserRouter>
   );
