@@ -11,6 +11,7 @@ const Provider = ({ children }) => {
   const [category, setCategory] = useState();
   const [searchInput, setSearchInput] = useState('');
   const [isShowInput, setIsShowInput] = useState(false);
+  const [ingredient, setIngredient] = useState('');
   const [empty, setEmpty] = useState();
   const [enableButton, setEnableButton] = useState(true);
   const [route, setRoute] = useState('');
@@ -33,6 +34,8 @@ const Provider = ({ children }) => {
     setSearchInput,
     isShowInput,
     setIsShowInput,
+    ingredient,
+    setIngredient,
     email,
     setEmail,
     setEmpty,
