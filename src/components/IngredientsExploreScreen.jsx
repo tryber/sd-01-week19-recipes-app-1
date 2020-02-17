@@ -43,5 +43,5 @@ IngredientsExploreScreen.propTypes = {
     url: PropTypes.string.isRequired,
     isExact: PropTypes.bool.isRequired,
   }).isRequired,
-}
+};
 

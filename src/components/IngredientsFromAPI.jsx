@@ -11,7 +11,7 @@ const IngredientsFromAPI = ({ ingredient, currentFood }) => {
       ingredientImage = `https://www.themealdb.com/images/ingredients/${ingredientName}.png`;
     }
     return (
-      <Link to='/receitas/comidas/'>
+      <Link to="/receitas/comidas/">
         <div className="Ingredients_container">
           <img
             alt={`${ingredientName} icon`}
