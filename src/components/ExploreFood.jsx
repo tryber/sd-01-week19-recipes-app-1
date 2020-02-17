@@ -6,6 +6,7 @@ import context from '../context/context';
 import Header from './Header';
 import Footer from './Footer';
 import '../styles/Explore.css';
+import { mealRandomAPI, drinkRandomAPI } from '../services/foodAPI';
 
 const ExploreFood = ({ location: { pathname } }) => {
   const {
@@ -14,6 +15,8 @@ const ExploreFood = ({ location: { pathname } }) => {
     setEnableButton,
     route,
     setRoute,
+    idFood,
+    setIdFood,
   } = useContext(context);
 
   useEffect(() => {
@@ -21,10 +24,14 @@ const ExploreFood = ({ location: { pathname } }) => {
       setCurrentFood('Explorar Comidas');
       setEnableButton(false);
       setRoute('/explorar/comidas/ingredientes');
+      setIdFood('/receitas/comidas/')
+      mealRandomAPI()
     } else {
       setCurrentFood('Explorar Bebidas');
       setEnableButton(true);
       setRoute('/explorar/bebidas/ingredientes');
+      setIdFood('/receitas/bebidas/')
+      drinkRandomAPI()
     }
   }, [pathname]);
 
@@ -41,10 +48,10 @@ const ExploreFood = ({ location: { pathname } }) => {
             className="button"
             disabled={enableButton}
           >
-          Por local de origem
+            Por local de origem
           </button>
         </Link>
-        <Link>
+        <Link to={`${idFood}${localStorage.idFood}`}>
           <button data-testid="explore-surprise" className="button">Me surpreenda!</button>
         </Link>
       </div>

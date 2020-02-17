@@ -14,6 +14,9 @@ const Provider = ({ children }) => {
   const [empty, setEmpty] = useState();
   const [enableButton, setEnableButton] = useState(true);
   const [route, setRoute] = useState('');
+  const [detailsData, setDetailsData] = useState();
+  const [recommendeds, setRecommendeds] = useState();
+  const [idFood, setIdFood] = useState('');
 
   const storeContext = {
     disabled,
@@ -38,6 +41,12 @@ const Provider = ({ children }) => {
     setEnableButton,
     route,
     setRoute,
+    detailsData,
+    setDetailsData,
+    recommendeds,
+    setRecommendeds,
+    idFood,
+    setIdFood,
   };
 
   return <context.Provider value={storeContext}>{children}</context.Provider>;

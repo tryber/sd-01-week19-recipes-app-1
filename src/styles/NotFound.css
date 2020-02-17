@@ -1,40 +1,41 @@
 #meals {
-  height: 100vh;
-  width: 100%;
+  align-items: center;
   background: #0fa36b;
+  color: #464646;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-family: sans-serif;
-  color: #464646;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
 }
 
 #rocksGlass {
-  max-height: 80vh;
   animation: shake 1s infinite ease;
+  max-height: 80vh;
 }
 
 #iceLeft {
   /* transform-origin set in px for firefox compatibility */
+  animation: clink .8s infinite ease;
   opacity: 0.6;
   transform-origin: 36px 66px;
-  animation: clink .8s infinite ease;
 }
 
 #iceRight {
   /* transform-origin set in px for firefox compatibility */
+  animation: clink .8s .2s infinite ease;
   opacity: 0.6;
   transform-origin: 60px 78px;
-  animation: clink .8s .2s infinite ease;
 }
 
 #meals > span {
+  animation: shake 1.5s infinite ease;
   color: aliceblue;
-  font-weight: 900;
   font-family: 'Montserrat', sans-serif;
   font-size: 3em;
-  animation: shake 1.5s infinite ease;
+  font-weight: 900;
+  text-align: center;
 }
 
 @keyframes shake {

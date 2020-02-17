@@ -1,11 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import context from '../context/context';
 import '../styles/Food.css';
 
-function meal(data, index) {
+function saveFood(data) {
+  localStorage.setItem('foodData', JSON.stringify(data));
+}
+
+function meal(data, index, recommendeds) {
   return (
-    <Link to={`/receitas/comidas/${data.idMeal}`} className="food-container">
+    <Link
+      to={`/receitas/comidas/${data.idMeal}`}
+      onClick={() => saveFood(data)}
+      className={recommendeds ? 'recommendeds-child' : 'food-container'}
+    >
       <div>
         <img
           className="food-image"
@@ -24,9 +33,13 @@ function meal(data, index) {
   );
 }
 
-function drink(data, index) {
+function drink(data, index, recommendeds) {
   return (
-    <Link to={`/receitas/bebidas/${data.idDrink}`} className="food-container">
+    <Link
+      to={`/receitas/bebidas/${data.idDrink}`}
+      onClick={() => saveFood(data)}
+      className={recommendeds ? 'recommendeds-child' : 'food-container'}
+    >
       <div>
         <img
           className="food-image"
@@ -46,10 +59,11 @@ function drink(data, index) {
 }
 
 function Food({ data, index }) {
+  const { recommendeds } = useContext(context);
   if (data.idMeal) {
-    return meal(data, index);
+    return meal(data, index, recommendeds);
   }
-  return drink(data, index);
+  return drink(data, index, recommendeds);
 }
 
 Food.propTypes = {
