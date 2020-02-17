@@ -30,6 +30,6 @@ const IngredientsFromAPI = ({ ingredient, currentFood }) => {
       </Link>
     );
   });
-}
+};
 
 export default IngredientsFromAPI;
