@@ -8,7 +8,6 @@ import ExplorePage from './components/ExplorePage';
 import ExploreFood from './components/ExploreFood';
 import DetailsPage from './components/DetailsPage';
 
-
 function App() {
   return (
     <BrowserRouter>
