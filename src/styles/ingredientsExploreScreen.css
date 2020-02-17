@@ -54,7 +54,7 @@
 
 .API_Ingredients-container{
   display: flex;
-  justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }

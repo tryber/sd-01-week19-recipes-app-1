@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Header from './Header';
 import Footer from './Footer';
 import IngredientsFromAPI from './IngredientsFromAPI';
 import context from '../context/context';
 import { mealAPI, drinkAPI } from '../services/foodAPI';
-import PropTypes from 'prop-types';
 import '../styles/ingredientsExploreScreen.css';
 
 const IngredientsExploreScreen = ({ match }) => {
@@ -17,7 +17,7 @@ const IngredientsExploreScreen = ({ match }) => {
   }, []);
 
   if (!ingredient) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
   return (
     <div className="Explore_Ingredients-father">
@@ -42,5 +42,6 @@ IngredientsExploreScreen.propTypes = {
     path: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
     isExact: PropTypes.bool.isRequired,
-  })
+  }).isRequired,
 }
+
