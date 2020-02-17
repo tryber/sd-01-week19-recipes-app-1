@@ -1,6 +1,7 @@
 .button {
   background-color: lightgrey;
   border: none;
+  font-size: 6mm;
   height: 50px;
   margin: 10px;
   width: 250px;
