@@ -31,7 +31,7 @@ const ExplorePage = ({ location: { pathname } }) => {
           </button>
         </Link>
       </div>
-      <div className="explore-footer">
+      <div className="Explore_Food_footer">
         <Footer />
       </div>
     </div>
