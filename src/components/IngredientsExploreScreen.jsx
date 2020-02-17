@@ -4,11 +4,13 @@ import Footer from './Footer';
 import IngredientsFromAPI from './IngredientsFromAPI';
 import context from '../context/context';
 import { mealAPI, drinkAPI } from '../services/foodAPI';
+import PropTypes from 'prop-types';
 import '../styles/ingredientsExploreScreen.css';
 
-const IngredientsExploreScreen = ({match}) => {
+const IngredientsExploreScreen = ({ match }) => {
   const { ingredient, setIngredient } = useContext(context);
   useEffect(() => {
+    console.log(match)
     if (match.url.includes('comidas')) {
       return mealAPI('list.php?i=list', setIngredient);
     }
@@ -21,10 +23,12 @@ const IngredientsExploreScreen = ({match}) => {
   return (
     <div className="Explore_Ingredients-father">
       <Header />
-      <IngredientsFromAPI
-        ingredient={ingredient}
-        currentFood={match.url}
-      />
+      <div className="API_Ingredients-container">
+        <IngredientsFromAPI
+          ingredient={ingredient}
+          currentFood={match.url}
+        />
+      </div>
       <div className="Explore_Ingredients-footer">
         <Footer />
       </div>
@@ -33,3 +37,11 @@ const IngredientsExploreScreen = ({match}) => {
 };
 
 export default IngredientsExploreScreen;
+
+IngredientsExploreScreen.propTypes = {
+  match: PropTypes.shape({
+    path: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    isExact: PropTypes.bool.isRequired,
+  })
+}

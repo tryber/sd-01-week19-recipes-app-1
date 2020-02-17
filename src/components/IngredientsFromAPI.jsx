@@ -10,21 +10,21 @@ const IngredientsFromAPI = ({ ingredient, currentFood }) => {
       ingredientImage = `https://www.themealdb.com/images/ingredients/${ingredientName}.png`;
     }
     return (
-      <div>
-        <div>
-          <img
-            alt={`${ingredientName} icon`}
-            src={ingredientImage}
-            data-testid={`${ingredientName}-card-img`}
-          />
-        </div>
-        <div>
-          <p>Ingredient</p>
-          <p data-testid={`${ingredientName}-card-name`}>
-            {ingredientName}
-          </p>
-        </div>
-      </div >
+      <div className="Ingredients_container">
+        <img
+          alt={`${ingredientName} icon`}
+          className="Ingredients_image"
+          src={ingredientImage}
+          data-testid={`${ingredientName}-card-img`}
+        />
+        <p className="Ingredients_category">Ingredient</p>
+        <p
+          data-testid={`${ingredientName}-card-name`}
+          className="Ingredients_name"
+        >
+          {ingredientName}
+        </p>
+      </div>
     );
   });
 }
