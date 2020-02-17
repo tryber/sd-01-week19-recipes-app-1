@@ -37,7 +37,7 @@ export const drinkRecommendedsAPI = (value = '', action) =>
 
 export const listAllAreasAPI = () => 
   fetch('https://www.themealdb.com/api/json/v1/1/list.php?a=list')
-    .then((response) => response.jsom())
+    .then((response) => response.json())
     .then((data) => localStorage.setItem('area', data.meals));
 
 export const filterAreAPI = (area) => 

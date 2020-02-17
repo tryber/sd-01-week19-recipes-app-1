@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect }from 'react';
 
 import { listAllAreasAPI } from '../services/foodAPI';
 
 const ExploreDropdown = () => {
-  listAllAreasAPI()
+
+  useEffect(() => {
+    listAllAreasAPI();
+  }, []);
+  
   return (
     <div>
       <select>

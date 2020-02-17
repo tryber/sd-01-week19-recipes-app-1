@@ -22,7 +22,7 @@ const ExploreOrigin = ({ location: { pathname }}) => {
       <div>
 
       </div>
-      <div className="footer-container">
+      <div className="Explore_Origin_container">
         <Footer />
       </div>
     </div>
