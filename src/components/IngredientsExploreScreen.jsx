@@ -10,7 +10,6 @@ import '../styles/ingredientsExploreScreen.css';
 const IngredientsExploreScreen = ({ match }) => {
   const { ingredient, setIngredient } = useContext(context);
   useEffect(() => {
-    console.log(match)
     if (match.url.includes('comidas')) {
       return mealAPI('list.php?i=list', setIngredient);
     }

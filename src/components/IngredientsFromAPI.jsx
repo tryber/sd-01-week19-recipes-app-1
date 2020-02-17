@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const IngredientsFromAPI = ({ ingredient, currentFood }) => {
   const ingredientsArray = currentFood.includes('comidas') ? ingredient.meals : ingredient.drinks;
@@ -10,21 +11,23 @@ const IngredientsFromAPI = ({ ingredient, currentFood }) => {
       ingredientImage = `https://www.themealdb.com/images/ingredients/${ingredientName}.png`;
     }
     return (
-      <div className="Ingredients_container">
-        <img
-          alt={`${ingredientName} icon`}
-          className="Ingredients_image"
-          src={ingredientImage}
-          data-testid={`${ingredientName}-card-img`}
-        />
-        <p className="Ingredients_category">Ingredient</p>
-        <p
-          data-testid={`${ingredientName}-card-name`}
-          className="Ingredients_name"
-        >
-          {ingredientName}
-        </p>
-      </div>
+      <Link to='/receitas/comidas/'>
+        <div className="Ingredients_container">
+          <img
+            alt={`${ingredientName} icon`}
+            className="Ingredients_image"
+            src={ingredientImage}
+            data-testid={`${ingredientName}-card-img`}
+          />
+          <p className="Ingredients_category">Ingredient</p>
+          <p
+            data-testid={`${ingredientName}-card-name`}
+            className="Ingredients_name"
+          >
+            {ingredientName}
+          </p>
+        </div>
+      </Link>
     );
   });
 }

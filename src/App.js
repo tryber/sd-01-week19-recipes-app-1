@@ -6,7 +6,6 @@ import ProfilePage from './components/ProfilePage';
 import FoodPage from './components/FoodPage';
 import IngredientsExploreScreen from './components/IngredientsExploreScreen';
 
-
 function App() {
   return (
     <BrowserRouter>
