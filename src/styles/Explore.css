@@ -1,4 +1,4 @@
-.button {
+.Explore_Food_button {
   background-color: lightgrey;
   border: none;
   font-size: 6mm;
@@ -7,14 +7,14 @@
   width: 250px;
 }
 
-.center-buttons {
+.Explore_Page_buttons {
   align-items: center;
   display: flex;
   flex-direction: column;
   margin-top: 30px;
 }
 
-.explore-footer {
+.Explore_Food_footer {
   bottom: 0;
   position: absolute;
   width: 100%;

@@ -19,12 +19,16 @@ const ExplorePage = ({ location: { pathname } }) => {
   return (
     <div>
       <Header />
-      <div className="center-buttons">
+      <div className="Explore_Page_buttons">
         <Link to="/explorar/comidas">
-          <button data-testid="explore-food" className="button">Explorar Comidas</button>
+          <button data-testid="explore-food" className="Explore_Food_button">
+            Explorar Comidas
+          </button>
         </Link>
         <Link to="/explorar/bebidas">
-          <button data-testid="explore-drinks" className="button">Explorar Bebidas</button>
+          <button data-testid="explore-drinks" className="Explore_Food_button">
+            Explorar Bebidas
+          </button>
         </Link>
       </div>
       <div className="explore-footer">

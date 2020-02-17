@@ -40,22 +40,32 @@ const ExploreFood = ({ location: { pathname } }) => {
       <Header />
       <div className="center-buttons">
         <Link to={route}>
-          <button data-testid="explore-by-ingredient" className="button">Por ingredientes</button>
+          <button
+            data-testid="explore-by-ingredient"
+            className="Explore_Food_button"
+          >
+            Por ingredientes
+          </button>
         </Link>
         <Link to="/explorar/comidas/area">
           <button
             data-testid="explore-by-area"
-            className="button"
+            className="Explore_Food_button"
             disabled={enableButton}
           >
             Por local de origem
           </button>
         </Link>
         <Link to={`${idFood}${localStorage.idFood}`}>
-          <button data-testid="explore-surprise" className="button">Me surpreenda!</button>
+          <button
+            data-testid="explore-surprise"
+            className="Explore_Food_button"
+          >
+            Me surpreenda!
+          </button>
         </Link>
       </div>
-      <div className="explore-footer">
+      <div className="Explore_Food_footer">
         <Footer />
       </div>
     </div>
