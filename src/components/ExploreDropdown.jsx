@@ -12,7 +12,12 @@ const ExploreDropdown = () => {
   return (
     <div>
       <select>
-        {localStorageArea.map((country) => <option>{country.strArea}</option>)}
+        <option value="list">All</option>
+        {localStorageArea.map(country => (
+          <option key={country.strArea} value={country.strArea}>
+            {country.strArea}
+          </option>
+        ))}
       </select>
     </div>
   );
