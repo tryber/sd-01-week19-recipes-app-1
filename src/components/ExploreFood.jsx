@@ -24,14 +24,14 @@ const ExploreFood = ({ location: { pathname } }) => {
       setCurrentFood('Explorar Comidas');
       setEnableButton(false);
       setRoute('/explorar/comidas/ingredientes');
-      setIdFood('/receitas/comidas/')
-      mealRandomAPI()
+      setIdFood('/receitas/comidas/');
+      mealRandomAPI();
     } else {
       setCurrentFood('Explorar Bebidas');
       setEnableButton(true);
       setRoute('/explorar/bebidas/ingredientes');
-      setIdFood('/receitas/bebidas/')
-      drinkRandomAPI()
+      setIdFood('/receitas/bebidas/');
+      drinkRandomAPI();
     }
   }, [pathname]);
 
