@@ -34,3 +34,13 @@ export const drinkRecommendedsAPI = (value = '', action) =>
   fetch(`${linkDrinkAPI}${value}`)
     .then((response) => response.json())
     .then((data) => action({ drinks: data.drinks.slice(0, 6) }));
+
+export const listAllAreasAPI = () => 
+  fetch('https://www.themealdb.com/api/json/v1/1/list.php?a=list')
+    .then((response) => response.jsom())
+    .then((data) => localStorage.setItem('area', data.meals));
+
+export const filterAreAPI = (area) => 
+  fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`)
+    .then((response) => response.json())
+    .then((data) => data)

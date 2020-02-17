@@ -5,6 +5,7 @@ import LoginPage from './components/LoginPage';
 import ProfilePage from './components/ProfilePage';
 import FoodPage from './components/FoodPage';
 import DetailsPage from './components/DetailsPage';
+import ExploreOrigin from './components/ExploreOrigin';
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
         <Route exact path="/explorar/bebidas" />
         <Route path="/explorar/comidas/ingredientes" />
         <Route path="/explorar/bebidas/ingredientes" />
-        <Route path="/explorar/comidas/area" />
+        <Route path="/explorar/comidas/area" component={ExploreOrigin} />
         <Route path="/perfil" component={ProfilePage} />
         <Route exact path="/receitas/comidas" component={FoodPage} />
         <Route exact path="/receitas/bebidas" component={FoodPage} />
