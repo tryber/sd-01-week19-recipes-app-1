@@ -4,3 +4,8 @@
   top: 93.6%;
   width: 100%;
 }
+
+.Explore_Origin_dropdwon {
+  display: flex;
+  justify-content: center;
+}

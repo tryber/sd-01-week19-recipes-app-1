@@ -55,4 +55,4 @@ export const listAllAreasAPI = () =>
 export const filterAreAPI = (area) =>
   fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`)
     .then((response) => response.json())
-    .then((data) => data)
+    .then((data) =>localStorage.setItem('filterFood', JSON.stringify(data.meals)))

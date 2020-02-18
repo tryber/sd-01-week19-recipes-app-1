@@ -6,7 +6,7 @@ import context from '../context/context';
 import Header from './Header';
 import Footer from './Footer';
 import '../styles/Explore.css';
-import { mealRandomAPI, drinkRandomAPI, listAllAreasAPI } from '../services/foodAPI';
+import { mealRandomAPI, drinkRandomAPI, listAllAreasAPI, filterAreAPI } from '../services/foodAPI';
 
 const ExploreFood = ({ location: { pathname } }) => {
   const {
@@ -26,6 +26,7 @@ const ExploreFood = ({ location: { pathname } }) => {
       setRoute('/explorar/comidas/ingredientes');
       setIdFood('/receitas/comidas/');
       mealRandomAPI();
+      listAllAreasAPI();
     } else {
       setCurrentFood('Explorar Bebidas');
       setEnableButton(true);

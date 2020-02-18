@@ -5,7 +5,8 @@ import context from '../context/context';
 import Header from './Header';
 import Footer from './Footer';
 import '../styles/ExploreOrigin.css';
-import ExploreDropdown from './ExploreDropdown';
+import ExploreOriginDropdown from './ExploreOriginDropdown';
+import ExploreOriginProduct from './ExploreOriginProducts';
 
 const ExploreOrigin = ({ location: { pathname }}) => {
   const { setCurrentFood } = useContext(context);
@@ -14,14 +15,16 @@ const ExploreOrigin = ({ location: { pathname }}) => {
     if (pathname === '/explorar/comidas/area') {
       setCurrentFood('Explorar Origem');
     }
-
   }, [pathname]);
 
   return (
     <div>
       <Header />
-      <div>
-        <ExploreDropdown />
+      <div className="Explore_Origin_dropdwon">
+        <ExploreOriginDropdown />
+      </div>
+      <div className="API">
+        <ExploreOriginProduct />
       </div>
       <div className="Explore_Origin_container">
         <Footer />
