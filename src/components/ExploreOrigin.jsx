@@ -8,7 +8,7 @@ import '../styles/ExploreOrigin.css';
 import ExploreOriginDropdown from './ExploreOriginDropdown';
 import ExploreOriginProduct from './ExploreOriginProducts';
 
-const ExploreOrigin = ({ location: { pathname }}) => {
+const ExploreOrigin = ({ location: { pathname } }) => {
   const { setCurrentFood } = useContext(context);
 
   useEffect(() => {
@@ -19,7 +19,9 @@ const ExploreOrigin = ({ location: { pathname }}) => {
 
   return (
     <div>
-      <Header />
+      <div className="Explore_Origin_header">
+        <Header />
+      </div>
       <div className="Explore_Origin_dropdwon">
         <ExploreOriginDropdown />
       </div>

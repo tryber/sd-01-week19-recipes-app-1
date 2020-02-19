@@ -1,6 +1,7 @@
 .Explore_Dropdown_select {
   font-size: 6mm;
   height: 45px;
-  margin-top: 15px;
-  width: 90%;
+  position: fixed;
+  top: 11.8%;
+  width: 95%;
 }

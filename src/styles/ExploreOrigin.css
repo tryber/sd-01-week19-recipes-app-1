@@ -1,5 +1,4 @@
 .Explore_Origin_container {
-  padding: 0;
   position: fixed;
   top: 93.6%;
   width: 100%;
@@ -8,4 +7,10 @@
 .Explore_Origin_dropdwon {
   display: flex;
   justify-content: center;
+}
+
+.Explore_Origin_header {
+  position: fixed;
+  top: 0%;
+  width: 100%;
 }
