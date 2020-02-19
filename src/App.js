@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import LoginPage from './components/LoginPage';
 import ProfilePage from './components/ProfilePage';
 import FoodPage from './components/FoodPage';
+import IngredientsExploreScreen from './components/IngredientsExploreScreen';
 import ExplorePage from './components/ExplorePage';
 import ExploreFood from './components/ExploreFood';
 import DetailsPage from './components/DetailsPage';
@@ -18,6 +19,8 @@ function App() {
         <Route exact path="/explorar" component={ExplorePage} />
         <Route exact path="/explorar/comidas" component={ExploreFood} />
         <Route exact path="/explorar/bebidas" component={ExploreFood} />
+        <Route path="/explorar/comidas/ingredientes" component={IngredientsExploreScreen} />
+        <Route path="/explorar/bebidas/ingredientes" component={IngredientsExploreScreen} />
         <Route path="/perfil" component={ProfilePage} />
         <Route exact path="/receitas/comidas" component={FoodPage} />
         <Route exact path="/receitas/bebidas" component={FoodPage} />
