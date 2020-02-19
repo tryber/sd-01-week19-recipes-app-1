@@ -1,26 +1,28 @@
-import React, { useEffect } from 'react';
+import React, { useContext } from 'react';
 
-  import { filterAreAPI } from '../services/foodAPI';
+import { filterAreAPI } from '../services/foodAPI';
+import context from '../context/context';
 import '../styles/ExploreOriginDropdown.css';
 
 const ExploreOriginDropdown = () => {
-  const localStorageArea = JSON.parse(localStorage.area);
+  const { setFilterFood, country } = useContext(context);
 
-  useEffect(() => {
-  }, [localStorage.filterFood]);
+  if(!country) {
+    return <div>Loading...</div>
+  }
 
   return (
     <select
       className="Explore_Dropdown_select"
       data-testid="explore-by-area-dropdown"
       onClick={e => {
-        filterAreAPI(e.target.value);
+        filterAreAPI(e.target.value, setFilterFood);
       }}
     >
-      <option data-testid="All" value="list">
+      {/* <option data-testid="All" value="list">
         All
-      </option>
-      {localStorageArea.map(country => (
+      </option> */}
+      {country.meals.map(country => (
         <option
           data-testid={`${country.strArea}-option`}
           key={country.strArea}

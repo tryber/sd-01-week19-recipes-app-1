@@ -37,22 +37,22 @@ export const drinkRecommendedsAPI = (value = '', action) =>
     .then((response) => response.json())
     .then((data) => action({ drinks: data.drinks.slice(0, 6) }));
 
-export const mealRandomAPI = () =>
+export const mealRandomAPI = (action) =>
   fetch(linkRandomMeatAPI)
     .then((response) => response.json())
-    .then((data) => localStorage.setItem('idFood', data.meals[0].idMeal));
+    .then((data) => action(data.meals[0].idMeal));
 
-export const drinkRandomAPI = () =>
+export const drinkRandomAPI = (action) =>
   fetch(linkRandomDrinkAPI)
     .then((response) => response.json())
-    .then((data) => localStorage.setItem('idFood', data.drinks[0].idDrink));
+    .then((data) => action(data.drinks[0].idDrink));
 
-export const listAllAreasAPI = () =>
+export const listAllAreasAPI = (action) =>
   fetch('https://www.themealdb.com/api/json/v1/1/list.php?a=list')
     .then((response) => response.json())
-    .then((data) => localStorage.setItem('area', JSON.stringify(data.meals)));
+    .then((data) => action(data));
 
-export const filterAreAPI = (area) =>
-  fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`)
+export const filterAreAPI = (country, action) =>
+  fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${country}`)
     .then((response) => response.json())
-    .then((data) =>localStorage.setItem('filterFood', JSON.stringify(data.meals)))
+    .then((data) => action(data));

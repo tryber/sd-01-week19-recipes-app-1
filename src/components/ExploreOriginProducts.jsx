@@ -1,19 +1,19 @@
-import React from 'react';
-import { useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
+import context from '../context/context';
 import '../styles/ExploreOriginProducts.css';
 
-
 const ExploreOriginProducts = () => {
+  const { filterFood } = useContext(context);
 
-  const localStorageFilter = JSON.parse(localStorage.filterFood);
-  useEffect(() => {
-  }, [localStorage.filterFood]);
+  if(!filterFood) {
+    return <div>Loading...</div>
+  }
 
   return (
     <div className="Explore_Origin_Products-API">
-      {localStorageFilter.map((food) => 
+      {filterFood.meals.map((food) => 
         <Link
           to={`/receitas/comidas/${food.idMeal}`}
           className="Explore_Origin_Products-container"

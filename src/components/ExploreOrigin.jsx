@@ -23,7 +23,7 @@ const ExploreOrigin = ({ location: { pathname }}) => {
       <div className="Explore_Origin_dropdwon">
         <ExploreOriginDropdown />
       </div>
-      <div className="API">
+      <div>
         <ExploreOriginProduct />
       </div>
       <div className="Explore_Origin_container">
