@@ -18,7 +18,7 @@ const Provider = ({ children }) => {
   const [recommendeds, setRecommendeds] = useState();
   const [idFood, setIdFood] = useState('');
   const [filterFood, setFilterFood] = useState();
-  const [country, setCountry] = useState();
+  const [countries, setCountries] = useState();
   const [randomFood, setRandomFood] = useState();
 
   const storeContext = {
@@ -52,8 +52,8 @@ const Provider = ({ children }) => {
     setIdFood,
     filterFood,
     setFilterFood,
-    country,
-    setCountry,
+    countries,
+    setCountries,
     randomFood,
     setRandomFood,
   };

@@ -17,7 +17,7 @@ const ExploreFood = ({ location: { pathname } }) => {
     setRoute,
     idFood,
     setIdFood,
-    setCountry,
+    setCountries,
     randomFood,
     setRandomFood,
   } = useContext(context);
@@ -29,7 +29,7 @@ const ExploreFood = ({ location: { pathname } }) => {
       setRoute('/explorar/comidas/ingredientes');
       setIdFood('/receitas/comidas/');
       mealRandomAPI(setRandomFood);
-      listAllAreasAPI(setCountry);
+      listAllAreasAPI(setCountries);
     } else {
       setCurrentFood('Explorar Bebidas');
       setEnableButton(true);

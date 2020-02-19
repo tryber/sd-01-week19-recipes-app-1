@@ -5,24 +5,24 @@ import context from '../context/context';
 import '../styles/ExploreOriginDropdown.css';
 
 const ExploreOriginDropdown = () => {
-  const { setFilterFood, country } = useContext(context);
+  const { setFilterFood, countries } = useContext(context);
 
-  if(!country) {
-    return <div>Loading...</div>
+  if (!countries) {
+    return <div>Loading...</div>;
   }
 
   return (
     <select
       className="Explore_Dropdown_select"
       data-testid="explore-by-area-dropdown"
-      onClick={e => {
+      onClick={(e) => {
         filterAreAPI(e.target.value, setFilterFood);
       }}
     >
       {/* <option data-testid="All" value="list">
         All
       </option> */}
-      {country.meals.map(country => (
+      {countries.meals.map((country) => (
         <option
           data-testid={`${country.strArea}-option`}
           key={country.strArea}

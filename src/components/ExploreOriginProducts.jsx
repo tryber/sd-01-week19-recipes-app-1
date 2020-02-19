@@ -7,13 +7,13 @@ import '../styles/ExploreOriginProducts.css';
 const ExploreOriginProducts = () => {
   const { filterFood } = useContext(context);
 
-  if(!filterFood) {
-    return <div>Loading...</div>
+  if (!filterFood) {
+    return <div>Loading...</div>;
   }
 
   return (
     <div className="Explore_Origin_Products-API">
-      {filterFood.meals.map((food) => 
+      {filterFood.meals.map((food) =>
         <Link
           to={`/receitas/comidas/${food.idMeal}`}
           className="Explore_Origin_Products-container"
@@ -32,7 +32,7 @@ const ExploreOriginProducts = () => {
               {food.strMeal}
             </p>
           </div>
-        </Link>
+        </Link>,
       )}
     </div>
   );
