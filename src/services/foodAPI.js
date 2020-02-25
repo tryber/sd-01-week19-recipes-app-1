@@ -64,4 +64,4 @@ export const filterAreAPI = (action, country) => {
       .then((response) => response.json())
       .then((data) => action(data));
   }
-}
+};
