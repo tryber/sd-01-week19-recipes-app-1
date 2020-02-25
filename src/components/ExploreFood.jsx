@@ -24,14 +24,14 @@ const ExploreFood = ({ location: { pathname } }) => {
 
   useEffect(() => {
     if (pathname === '/explorar/comidas') {
-      setCurrentFood('Explorar Comidas');
+      setCurrentFood('Explorar - Comidas');
       setEnableButton(false);
       setRoute('/explorar/comidas/ingredientes');
       setIdFood('/receitas/comidas/');
       mealRandomAPI(setRandomFood);
       listAllAreasAPI(setCountries);
     } else {
-      setCurrentFood('Explorar Bebidas');
+      setCurrentFood('Explorar - Bebidas');
       setEnableButton(true);
       setRoute('/explorar/bebidas/ingredientes');
       setIdFood('/receitas/bebidas/');

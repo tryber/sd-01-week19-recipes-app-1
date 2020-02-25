@@ -1,3 +1,5 @@
+import generateRandomLetter from '../services/randomLetter';
+
 const linkMeatAPI = 'https://www.themealdb.com/api/json/v1/1/';
 const linkDrinkAPI = 'https://www.thecocktaildb.com/api/json/v1/1/';
 const linkRandomDrinkAPI = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
@@ -52,7 +54,14 @@ export const listAllAreasAPI = (action) =>
     .then((response) => response.json())
     .then((data) => action(data));
 
-export const filterAreAPI = (country, action) =>
-  fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${country}`)
+export const filterAreAPI = (action, country) => {
+  if (country === 'All') {
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${generateRandomLetter()}`)
     .then((response) => response.json())
     .then((data) => action(data));
+  } else {
+    fetch(`${linkMeatAPI}filter.php?a=${country}`)
+      .then((response) => response.json())
+      .then((data) => action(data));
+  }
+}

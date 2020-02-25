@@ -16,12 +16,12 @@ const ExploreOriginDropdown = () => {
       className="Explore_Dropdown_select"
       data-testid="explore-by-area-dropdown"
       onClick={(e) => {
-        filterAreAPI(e.target.value, setFilterFood);
+        filterAreAPI(setFilterFood, e.target.value);
       }}
     >
-      {/* <option data-testid="All" value="list">
+      <option data-testid="All" value="All">
         All
-      </option> */}
+      </option>
       {countries.meals.map((country) => (
         <option
           data-testid={`${country.strArea}-option`}
