@@ -11,6 +11,6 @@ export default function ShareRecipe() {
   const isCopiedIconClass = isCopied ? 'ri-share-fill ri-xl' : 'ri-share-line ri-xl';
 
   return (
-    <i className={isCopiedIconClass} onClick={setCopied} />
+    <span className={isCopiedIconClass} onClick={setCopied} />
   );
 }
