@@ -27,7 +27,7 @@ function drinkHeader(data, id) {
       <div className="details-name-share-container">
         <p className="details-name">{strDrink}</p>
         <div>
-          <FavoriteButton data={{ id, strCategory, strMealThumb }} />
+          <FavoriteButton data={{ id, strCategory, strDrinkThumb }} />
         </div>
       </div>
       <p className="details-category">{strCategory}</p>

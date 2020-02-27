@@ -5,13 +5,18 @@ import '../styles/FavoriteButton.css';
 
 function addOrRemoveFavorite(data, isFavorited, setIsFavorited) {
   if (!isFavorited) {
+    const newData = {
+      id: data.id,
+      category: data.strCategory,
+      image: data.strDrinkThumb || data.strMealThumb,
+    };
     if (!localStorage.favoriteRecipes) {
-      localStorage.setItem('favoriteRecipes', JSON.stringify([data]));
+      localStorage.setItem('favoriteRecipes', JSON.stringify([newData]));
       return setIsFavorited(true);
     }
     localStorage.setItem(
       'favoriteRecipes',
-      JSON.stringify([...JSON.parse(localStorage.favoriteRecipes), data]),
+      JSON.stringify([...JSON.parse(localStorage.favoriteRecipes), newData]),
     );
     return setIsFavorited(true);
   }

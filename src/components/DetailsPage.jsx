@@ -11,6 +11,7 @@ import DetailsHeader from './DetailsHeader';
 import DetailsIngredients from './DetailsIngredients';
 import DetailsInstructions from './DetailsInstructions';
 import DetailsVideo from './DetailsVideo';
+import DetailsButton from './DetailsButton';
 import Loading from './Loading';
 import FoodList from './FoodList';
 import '../styles/DetailsIngredients.css';
@@ -48,7 +49,7 @@ function DetailsPage({ match }) {
   if (data && recommendeds) {
     return (
       <div>
-        <DetailsHeader id={match.params.id}/>
+        <DetailsHeader id={match.params.id} />
         <DetailsIngredients />
         <DetailsInstructions />
         <DetailsVideo />
@@ -56,6 +57,7 @@ function DetailsPage({ match }) {
           <p className="ingredients-title">Recomendadas</p>
           <FoodList result={recommendeds} />
         </div>
+        <DetailsButton />
       </div>
     );
   }
