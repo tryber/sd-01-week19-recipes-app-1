@@ -13,6 +13,7 @@ const Provider = ({ children }) => {
   const [isShowInput, setIsShowInput] = useState(false);
   const [ingredient, setIngredient] = useState('');
   const [empty, setEmpty] = useState();
+  const [clipboardCopied, setClipboardCopied] = useState(false);
   const [enableButton, setEnableButton] = useState(true);
   const [route, setRoute] = useState('');
   const [detailsData, setDetailsData] = useState();
@@ -43,6 +44,8 @@ const Provider = ({ children }) => {
     setEmail,
     setEmpty,
     empty,
+    clipboardCopied,
+    setClipboardCopied,
     enableButton,
     setEnableButton,
     route,

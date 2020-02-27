@@ -7,6 +7,7 @@ import context from '../context/context';
 import Header from './Header';
 import { mealAPI, drinkAPI } from '../services/foodAPI';
 import generateRandomLetter from '../services/randomLetter';
+import ShareRecipe from './CopyToClipboard';
 import '../styles/FoodPage.css';
 import Loading from './Loading';
 
@@ -49,6 +50,7 @@ function FoodPage({ location: { pathname } }) {
     return (
       <div>
         <Header />
+        <ShareRecipe />
         <Categories pathname={pathname} />
         <FoodList result={result} pathname={pathname} />
         <div className="footer-container">
