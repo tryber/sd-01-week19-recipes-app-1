@@ -4,9 +4,13 @@ import useClipboard from 'react-use-clipboard';
 import 'remixicon/fonts/remixicon.css';
 
 export default function ShareRecipe() {
-  const [setCopied] = useClipboard(window.location.href);
+  const [isCopied, setCopied] = useClipboard(window.location.href, {
+    successDuration: 1000
+  });
+  
+  const isCopiedIconClass = isCopied ? "ri-share-fill ri-xl" : "ri-share-line ri-xl";
 
   return (
-    <span className="ri-share-line ri-xl" onClick={setCopied} />
+    <a className={isCopiedIconClass} onClick={setCopied} />
   );
 }
