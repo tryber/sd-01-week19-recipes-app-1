@@ -8,12 +8,14 @@ import IngredientsExploreScreen from './components/IngredientsExploreScreen';
 import ExplorePage from './components/ExplorePage';
 import ExploreFood from './components/ExploreFood';
 import DetailsPage from './components/DetailsPage';
+import ExploreOrigin from './components/ExploreOrigin';
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={LoginPage} />
+        <Route path="/explorar/comidas/area" component={ExploreOrigin} />
         <Route exact path="/explorar" component={ExplorePage} />
         <Route exact path="/explorar/comidas" component={ExploreFood} />
         <Route exact path="/explorar/bebidas" component={ExploreFood} />
