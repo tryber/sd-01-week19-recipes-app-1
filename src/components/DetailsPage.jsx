@@ -48,7 +48,7 @@ function DetailsPage({ match }) {
   if (data && recommendeds) {
     return (
       <div>
-        <DetailsHeader />
+        <DetailsHeader id={match.params.id}/>
         <DetailsIngredients />
         <DetailsInstructions />
         <DetailsVideo />
