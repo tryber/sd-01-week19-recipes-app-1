@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ProfileLogout from './ProfileLogout';
 import Footer from './Footer';
-import HeaderProfile from './HeaderProfile';
+import HeaderWithoutSearch from './HeaderWithoutSearch';
 import context from '../context/context';
 import '../styles/ProfilePage.css';
 
@@ -19,7 +19,7 @@ const ProfilePage = ({ location: { pathname } }) => {
 
   return (
     <div>
-      <HeaderProfile />
+      <HeaderWithoutSearch />
       <div className="every-elements">
         <p data-testid="profile-email">{userEmail.email}</p>
         <Link to="/receitas-feitas">

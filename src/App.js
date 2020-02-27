@@ -9,6 +9,8 @@ import ExplorePage from './components/ExplorePage';
 import ExploreFood from './components/ExploreFood';
 import DetailsPage from './components/DetailsPage';
 import ExploreOrigin from './components/ExploreOrigin';
+import FoodFavorite from './components/FoodFavorite';
+import FoodFinished from './components/FoodFinished';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         <Route exact path="/receitas/bebidas" component={FoodPage} />
         <Route path="/receitas/comidas/:id" component={DetailsPage} />
         <Route path="/receitas/bebidas/:id" component={DetailsPage} />
+        <Route path="/receitas-favoritas" component={FoodFavorite} />
+        <Route path="/receitas-feitas" component={FoodFinished} />
       </Switch>
     </BrowserRouter>
   );
