@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import Heart from '../img/heart.svg';
 import RedHeart from '../img/redheart.svg';
 import '../styles/FavoriteButton.css';
@@ -51,5 +52,12 @@ function FavoriteButton({ data }) {
     />
   );
 }
+
+FavoriteButton.propTypes = {
+  data: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    strCategory: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default FavoriteButton;
