@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/DetailsHeader.css';
 import findData from '../services/findData';
 import FavoriteButton from './FavoriteButton';
+import CopyToClipboard from './CopyToClipboard';
 
 function mealHeader(data, id) {
   const { strMealThumb, strMeal, strCategory } = data;
@@ -10,7 +11,8 @@ function mealHeader(data, id) {
       <img src={strMealThumb} alt={strMeal} className="image-details" />
       <div className="details-name-share-container">
         <p className="details-name">{strMeal}</p>
-        <div>
+        <div className="icons-container">
+          <CopyToClipboard />
           <FavoriteButton data={{ id, strCategory, strMealThumb }} />
         </div>
       </div>
@@ -26,7 +28,8 @@ function drinkHeader(data, id) {
       <img src={strDrinkThumb} alt={strDrink} className="image-details" />
       <div className="details-name-share-container">
         <p className="details-name">{strDrink}</p>
-        <div>
+        <div className="icons-container">
+          <CopyToClipboard />
           <FavoriteButton data={{ id, strCategory, strDrinkThumb }} />
         </div>
       </div>

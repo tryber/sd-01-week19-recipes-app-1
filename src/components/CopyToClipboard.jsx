@@ -1,6 +1,5 @@
 import React from 'react';
 import useClipboard from 'react-use-clipboard';
-
 import 'remixicon/fonts/remixicon.css';
 
 export default function ShareRecipe() {
@@ -9,8 +8,8 @@ export default function ShareRecipe() {
   });
 
   const isCopiedIconClass = isCopied ? 'ri-share-fill ri-xl' : 'ri-share-line ri-xl';
-
+  const showAlert = () => alert('link copiado!');
   return (
-    <button className={isCopiedIconClass} onClick={setCopied} />
+    <button className={isCopiedIconClass} onClick={setCopied, showAlert} />
   );
 }
