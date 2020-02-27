@@ -1,28 +1,17 @@
-.food-container {
+.Ingredients_container {
   background: white;
   border-radius: 6px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   color: black;
   height: 182px;
-  margin-bottom: 1em;
+  margin: 10px;
+  padding: 1px;
   text-decoration: none;
   top: 171px;
   width: 161px;
 }
 
-.recommendeds-child {
-  background: white;
-  border-radius: 6px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  color: black;
-  height: 182px;
-  margin: 0 0.7em 1em;
-  text-decoration: none;
-  top: 171px;
-  width: 161px;
-}
-
-.food-image {
+.Ingredients_image {
   border-radius: 6px;
   height: 109px;
   left: 12px;
@@ -30,7 +19,7 @@
   width: 161px;
 }
 
-.food-category {
+.Ingredients_category {
   align-items: flex-end;
   color: darkgray;
   display: flex;
@@ -43,7 +32,7 @@
   top: 470px;
 }
 
-.food-name {
+.Ingredients_name {
   align-items: flex-end;
   color: black;
   display: flex;
@@ -55,18 +44,14 @@
   width: 110px;
 }
 
-.food-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+.Explore_Ingredients-footer {
+  position: fixed;
+  top: 93.6%;
+  width: 100%;
 }
 
-.food-recommendeds {
+.API_Ingredients-container {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  margin: 0.3em;
-  overflow: hidden;
-  overflow-x: auto;
-  width: 100%;
+  flex-flow: row wrap;
+  justify-content: center;
 }

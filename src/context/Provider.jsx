@@ -11,8 +11,17 @@ const Provider = ({ children }) => {
   const [category, setCategory] = useState();
   const [searchInput, setSearchInput] = useState('');
   const [isShowInput, setIsShowInput] = useState(false);
+  const [ingredient, setIngredient] = useState('');
   const [empty, setEmpty] = useState();
   const [clipboardCopied, setClipboardCopied] = useState(false);
+  const [enableButton, setEnableButton] = useState(true);
+  const [route, setRoute] = useState('');
+  const [detailsData, setDetailsData] = useState();
+  const [recommendeds, setRecommendeds] = useState();
+  const [idFood, setIdFood] = useState('');
+  const [filterFood, setFilterFood] = useState();
+  const [countries, setCountries] = useState();
+  const [randomFood, setRandomFood] = useState();
 
   const storeContext = {
     disabled,
@@ -29,12 +38,30 @@ const Provider = ({ children }) => {
     setSearchInput,
     isShowInput,
     setIsShowInput,
+    ingredient,
+    setIngredient,
     email,
     setEmail,
     setEmpty,
     empty,
     clipboardCopied,
     setClipboardCopied,
+    enableButton,
+    setEnableButton,
+    route,
+    setRoute,
+    detailsData,
+    setDetailsData,
+    recommendeds,
+    setRecommendeds,
+    idFood,
+    setIdFood,
+    filterFood,
+    setFilterFood,
+    countries,
+    setCountries,
+    randomFood,
+    setRandomFood,
   };
 
   return <context.Provider value={storeContext}>{children}</context.Provider>;
