@@ -7,6 +7,6 @@ export default function ShareRecipe() {
   const [setCopied] = useClipboard(window.location.href);
 
   return (
-    <i className="ri-share-line ri-xl" onClick={setCopied} />
+    <span className="ri-share-line ri-xl" onClick={setCopied} />
   );
 }
