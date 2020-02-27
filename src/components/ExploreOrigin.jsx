@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 
+import { filterAreAPI } from '../services/foodAPI';
 import context from '../context/context';
 import Header from './Header';
 import Footer from './Footer';
@@ -9,11 +10,12 @@ import ExploreOriginDropdown from './ExploreOriginDropdown';
 import ExploreOriginProduct from './ExploreOriginProducts';
 
 const ExploreOrigin = ({ location: { pathname } }) => {
-  const { setCurrentFood } = useContext(context);
+  const { setCurrentFood, setFilterFood } = useContext(context);
 
   useEffect(() => {
     if (pathname === '/explorar/comidas/area') {
       setCurrentFood('Explorar Origem');
+      filterAreAPI(setFilterFood, 'All');
     }
   }, [pathname]);
 
