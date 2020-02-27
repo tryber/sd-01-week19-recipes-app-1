@@ -5,10 +5,10 @@ import 'remixicon/fonts/remixicon.css';
 
 export default function ShareRecipe() {
   const [isCopied, setCopied] = useClipboard(window.location.href, {
-    successDuration: 1000
+    successDuration: 1000,
   });
-  
-  const isCopiedIconClass = isCopied ? "ri-share-fill ri-xl" : "ri-share-line ri-xl";
+
+  const isCopiedIconClass = isCopied ? 'ri-share-fill ri-xl' : 'ri-share-line ri-xl';
 
   return (
     <a className={isCopiedIconClass} onClick={setCopied} />
