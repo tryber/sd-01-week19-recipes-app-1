@@ -57,7 +57,7 @@ function DetailsPage({ match }) {
           <p className="ingredients-title">Recomendadas</p>
           <FoodList result={recommendeds} />
         </div>
-        <DetailsButton id={match.params.id} />
+        <DetailsButton match={match} />
       </div>
     );
   }
