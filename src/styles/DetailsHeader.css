@@ -33,3 +33,9 @@
   margin-left: 0.4em;
   width: 73px;
 }
+
+.icons-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}

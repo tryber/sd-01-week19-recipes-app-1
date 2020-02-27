@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-
 import LoginPage from './components/LoginPage';
 import ProfilePage from './components/ProfilePage';
 import FoodPage from './components/FoodPage';
@@ -9,6 +8,7 @@ import ExplorePage from './components/ExplorePage';
 import ExploreFood from './components/ExploreFood';
 import DetailsPage from './components/DetailsPage';
 import ExploreOrigin from './components/ExploreOrigin';
+import ProgressPage from './components/ProgressPage';
 
 function App() {
   return (
@@ -24,8 +24,10 @@ function App() {
         <Route path="/perfil" component={ProfilePage} />
         <Route exact path="/receitas/comidas" component={FoodPage} />
         <Route exact path="/receitas/bebidas" component={FoodPage} />
-        <Route path="/receitas/comidas/:id" component={DetailsPage} />
-        <Route path="/receitas/bebidas/:id" component={DetailsPage} />
+        <Route exact path="/receitas/comidas/:id" component={DetailsPage} />
+        <Route exact path="/receitas/bebidas/:id" component={DetailsPage} />
+        <Route path="/receitas/comidas/:id/em-progresso" component={ProgressPage} />
+        <Route path="/receitas/bebidas/:id/em-progresso" component={ProgressPage} />
       </Switch>
     </BrowserRouter>
   );
