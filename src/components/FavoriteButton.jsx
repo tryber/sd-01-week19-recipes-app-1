@@ -1,9 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Heart from '../img/heart.svg';
 import RedHeart from '../img/redheart.svg';
-import '../styles/FavoriteIcon.css';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import '../styles/FavoriteButton.css';
 
 function addOrRemoveFavorite(data, isFavorited, setIsFavorited) {
   if (!isFavorited) {

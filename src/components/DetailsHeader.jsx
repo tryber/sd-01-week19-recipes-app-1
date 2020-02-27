@@ -10,7 +10,9 @@ function mealHeader(data, id) {
       <img src={strMealThumb} alt={strMeal} className="image-details" />
       <div className="details-name-share-container">
         <p className="details-name">{strMeal}</p>
-        <div><FavoriteButton data={{id, strCategory, strMealThumb}}/></div>
+        <div>
+          <FavoriteButton data={{ id, strCategory, strMealThumb }} />
+        </div>
       </div>
       <p className="details-category">{strCategory}</p>
     </div>
@@ -24,7 +26,9 @@ function drinkHeader(data, id) {
       <img src={strDrinkThumb} alt={strDrink} className="image-details" />
       <div className="details-name-share-container">
         <p className="details-name">{strDrink}</p>
-        <div>Share/Favorite</div>
+        <div>
+          <FavoriteButton data={{ id, strCategory, strMealThumb }} />
+        </div>
       </div>
       <p className="details-category">{strCategory}</p>
     </div>

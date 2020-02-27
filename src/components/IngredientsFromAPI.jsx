@@ -10,7 +10,6 @@ const IngredientsFromAPI = ({ ingredient, currentFood }) => {
       ingredientName = unity.strIngredient;
       ingredientImage = `https://www.themealdb.com/images/ingredients/${ingredientName}.png`;
     }
-    //asuhd
     return (
       <Link to="/receitas/comidas/">
         <div className="Ingredients_container">
