@@ -18,8 +18,8 @@
   flex-direction: row;
   justify-content: flex-start;
   margin: 0;
-  top: 0;
   padding: 0;
+  top: 0;
 }
 
 .marked-ingredient {

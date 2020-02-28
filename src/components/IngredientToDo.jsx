@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import '../styles/IngredientToDo.css';
 
 function IngredientToDo({ ingredient }) {
@@ -20,5 +21,9 @@ function IngredientToDo({ ingredient }) {
     </div>
   );
 }
+
+IngredientToDo.propTypes = {
+  ingredient: PropTypes.string.isRequired,
+};
 
 export default IngredientToDo;
