@@ -5,7 +5,7 @@ import IconSearch from '../img/iconSearch.png';
 import context from '../context/context';
 import '../styles/Header.css';
 
-const HeaderProfile = () => {
+const HeaderWithoutSearch = () => {
   const { currentFood } = useContext(context);
 
   return (
@@ -24,4 +24,4 @@ const HeaderProfile = () => {
   );
 };
 
-export default HeaderProfile;
+export default HeaderWithoutSearch;
