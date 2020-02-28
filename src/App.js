@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-
 import LoginPage from './components/LoginPage';
 import ProfilePage from './components/ProfilePage';
 import FoodPage from './components/FoodPage';
@@ -9,8 +8,12 @@ import ExplorePage from './components/ExplorePage';
 import ExploreFood from './components/ExploreFood';
 import DetailsPage from './components/DetailsPage';
 import ExploreOrigin from './components/ExploreOrigin';
+<<<<<<< HEAD
 import FoodFavorite from './components/FoodFavorite';
 import FoodFinished from './components/FoodFinished';
+=======
+import ProgressPage from './components/ProgressPage';
+>>>>>>> master
 
 function App() {
   return (
@@ -26,10 +29,17 @@ function App() {
         <Route path="/perfil" component={ProfilePage} />
         <Route exact path="/receitas/comidas" component={FoodPage} />
         <Route exact path="/receitas/bebidas" component={FoodPage} />
+<<<<<<< HEAD
         <Route path="/receitas/comidas/:id" component={DetailsPage} />
         <Route path="/receitas/bebidas/:id" component={DetailsPage} />
         <Route path="/receitas-favoritas" component={FoodFavorite} />
         <Route path="/receitas-feitas" component={FoodFinished} />
+=======
+        <Route exact path="/receitas/comidas/:id" component={DetailsPage} />
+        <Route exact path="/receitas/bebidas/:id" component={DetailsPage} />
+        <Route path="/receitas/comidas/:id/em-progresso" component={ProgressPage} />
+        <Route path="/receitas/bebidas/:id/em-progresso" component={ProgressPage} />
+>>>>>>> master
       </Switch>
     </BrowserRouter>
   );

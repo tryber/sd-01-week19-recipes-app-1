@@ -1,4 +1,5 @@
 import React, { useEffect, useContext } from 'react';
+import PropTypes from 'prop-types';
 
 import context from '../context/context';
 import HeaderWithoutSearch from './HeaderWithoutSearch';
@@ -16,8 +17,13 @@ const FoodFinished = ({ location: { pathname } }) => {
     <div>
       <HeaderWithoutSearch />
     </div>
-  )
+  );
+};
 
-}
+FoodFinished.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default FoodFinished;
