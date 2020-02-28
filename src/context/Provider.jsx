@@ -22,6 +22,7 @@ const Provider = ({ children }) => {
   const [filterFood, setFilterFood] = useState();
   const [countries, setCountries] = useState();
   const [randomFood, setRandomFood] = useState();
+  const [numberOfMarkeds, setNumberOfMarkeds] = useState();
 
   const storeContext = {
     disabled,
@@ -62,6 +63,8 @@ const Provider = ({ children }) => {
     setCountries,
     randomFood,
     setRandomFood,
+    numberOfMarkeds,
+    setNumberOfMarkeds,
   };
 
   return <context.Provider value={storeContext}>{children}</context.Provider>;

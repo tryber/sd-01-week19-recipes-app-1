@@ -3,8 +3,9 @@ import '../styles/IngredientToDo.css';
 
 function IngredientToDo({ ingredient }) {
   const [isMarked, setIsMarked] = useState(false);
+
   return (
-    <div class="ingredient-container">
+    <div className="ingredient-container">
       <input
         type="checkbox"
         className="ingredient-button"

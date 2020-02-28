@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import DetailsHeader from './DetailsHeader';
 import DetailsInstructions from './DetailsInstructions';
 import IngredientToDo from './IngredientToDo';
@@ -26,6 +27,14 @@ function ingredientsToDo(data) {
   );
 }
 
+function linkToDoneRecipes() {
+  return (
+    <Link to="/receitas-feitas">
+      <button>Finalizar receita</button>
+    </Link>
+  );
+}
+
 function ProgressPage() {
   const [currentData, setCurrentData] = useState('');
   useEffect(() => {
@@ -44,6 +53,7 @@ function ProgressPage() {
       <DetailsHeader />
       {ingredientsToDo(currentData)}
       <DetailsInstructions />
+      {linkToDoneRecipes()}
     </div>
   );
 }
